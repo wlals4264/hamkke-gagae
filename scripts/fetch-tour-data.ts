@@ -4,6 +4,9 @@
  *
  * 실행: npm run fetch:tour-data
  * (TOUR_API_KEY는 .env.local에 저장돼 있어야 합니다)
+ *
+ * 이미 확인한 contentId는 scripts/.tour-checked-ids.json에 기록해두므로, 쿼터 초과로 중단된 뒤
+ * 다시 실행해도 같은 곳을 재조회하지 않고 이어서 진행합니다.
  */
 import { writeFileSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -37,7 +40,7 @@ if (!TOUR_API_KEY) {
 }
 
 const END_POINT = "https://apis.data.go.kr/B551011/KorService2";
-const MOBILE_APP = "hamkkegagae";
+const MOBILE_APP = "kkori-ttara";
 
 /** 서울 25개 구: slug(로마자) / 한글명 / 법정동 시군구코드(lDongSignguCd) */
 const SEOUL_GU: { slug: string; name: string; code: string }[] = [
@@ -78,11 +81,14 @@ function mapCategory(contenttypeid: string, cat2: string): PlaceCategory | null 
 /**
  * 반려동물 동반 태그는 contentTypeId=38(쇼핑)에 압도적으로 몰려있고 39(음식점·카페)/12(관광지·공원)엔
  * 드뭅니다. 카테고리 편중을 막기 위해 타입별로 후보 수집량과 detailPetTour2 확인량을 따로 둡니다.
+ *
+ * detailPetTour2는 구당 최대 checkLimit 합(30)만큼 호출되므로 25개 구를 다 돌아도 750건으로,
+ * data.go.kr의 오퍼레이션별 하루 호출 한도(1,000건) 안에서 전체를 한 번에 끝낼 수 있습니다.
  */
 const CONTENT_TYPE_PLAN: { contentTypeId: string; numOfRows: number; checkLimit: number }[] = [
-  { contentTypeId: "39", numOfRows: 100, checkLimit: 40 }, // 음식점·카페
-  { contentTypeId: "12", numOfRows: 60, checkLimit: 18 }, // 관광지(공원 등)
-  { contentTypeId: "38", numOfRows: 15, checkLimit: 5 }, // 쇼핑 (이미 충분히 잘 잡히므로 소량만)
+  { contentTypeId: "39", numOfRows: 60, checkLimit: 20 }, // 음식점·카페
+  { contentTypeId: "12", numOfRows: 30, checkLimit: 7 }, // 관광지(공원 등)
+  { contentTypeId: "38", numOfRows: 10, checkLimit: 3 }, // 쇼핑 (이미 충분히 잘 잡히므로 소량만)
 ];
 
 function sleep(ms: number) {
@@ -197,6 +203,8 @@ function buildPetPolicyNotes(pet: DetailPetTourItem): string {
 }
 
 const outPath = resolve(ROOT, "src/data/places.json");
+/** 이미 확인한 contentId(반려동물 정보 유무 무관)를 기록해, 재실행 시 같은 곳을 또 조회하지 않게 합니다. */
+const checkedIdsPath = resolve(ROOT, "scripts/.tour-checked-ids.json");
 
 function save(places: Map<string, Place>) {
   const arr = Array.from(places.values());
@@ -204,8 +212,30 @@ function save(places: Map<string, Place>) {
   return arr;
 }
 
+function loadExistingPlaces(): Map<string, Place> {
+  try {
+    const arr = JSON.parse(readFileSync(outPath, "utf-8")) as Place[];
+    return new Map(arr.map((p) => [p.id, p]));
+  } catch {
+    return new Map();
+  }
+}
+
+function loadCheckedIds(): Set<string> {
+  try {
+    return new Set(JSON.parse(readFileSync(checkedIdsPath, "utf-8")) as string[]);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveCheckedIds(ids: Set<string>) {
+  writeFileSync(checkedIdsPath, JSON.stringify(Array.from(ids)), "utf-8");
+}
+
 async function main() {
-  const places = new Map<string, Place>();
+  const places = loadExistingPlaces();
+  const checkedIds = loadCheckedIds();
   let quotaExceeded = false;
 
   outer: for (const gu of SEOUL_GU) {
@@ -229,7 +259,7 @@ async function main() {
       for (const candidate of candidates.slice(0, plan.checkLimit)) {
         const category = mapCategory(candidate.contenttypeid, candidate.cat2);
         if (!category) continue;
-        if (places.has(`tourapi-${candidate.contentid}`)) continue;
+        if (checkedIds.has(candidate.contentid)) continue;
 
         let pet: DetailPetTourItem | null;
         try {
@@ -242,6 +272,7 @@ async function main() {
           }
           throw err;
         }
+        checkedIds.add(candidate.contentid);
         await sleep(120);
         if (!pet) continue;
 
@@ -276,9 +307,11 @@ async function main() {
 
     console.log(`  → ${guHitCount}건 반려동물 동반 장소 확보 (누적 ${places.size}건)`);
     save(places); // 구 단위로 저장해 중간에 쿼터가 소진돼도 진행분을 잃지 않습니다.
+    saveCheckedIds(checkedIds);
   }
 
   const arr = save(places);
+  saveCheckedIds(checkedIds);
   console.log(
     quotaExceeded
       ? `\n쿼터 초과로 중간에 멈췄습니다. 현재까지 총 ${arr.length}건을 ${outPath}에 저장했습니다. 쿼터가 초기화된 뒤 다시 실행하면 이어서 채울 수 있습니다.`

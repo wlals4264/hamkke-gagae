@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*
+
+# fetch-tour-data.ts 재실행 캐시 (이미 확인한 contentId 목록)
+scripts/.tour-checked-ids.json
