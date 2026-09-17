@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BRAND_NAME } from "@/lib/constants";
 
 export function PawMark({ className = "h-10 w-10" }: { className?: string }) {
   return (
@@ -28,11 +29,11 @@ export function PawMark({ className = "h-10 w-10" }: { className?: string }) {
 
 export default function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="group inline-flex items-center gap-2.5" aria-label="함께가개 홈">
+    <Link href="/" className="group inline-flex items-center gap-2.5" aria-label={`${BRAND_NAME} 홈`}>
       <PawMark />
       {!compact && (
         <span className="leading-none">
-          <strong className="block text-[19px] font-bold tracking-[-0.04em] text-ink">함께가개</strong>
+          <strong className="block text-[19px] font-bold tracking-[-0.04em] text-ink">{BRAND_NAME}</strong>
           <span className="mt-1 block text-[9px] font-bold tracking-[0.16em] text-sage-700">SEOUL PET PLACES</span>
         </span>
       )}

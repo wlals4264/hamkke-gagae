@@ -1,8 +1,8 @@
 {
-  "name": "hamkke-gagae",
+  "name": "kkori-ttara",
   "version": "0.1.0",
   "private": true,
-  "description": "함께가개 - 서울 반려동물 동반 가능 장소 지도, 구별/카테고리별 필터링과 현위치 기반 탐색을 지원하는 Next.js 데모 프로젝트",
+  "description": "꼬리따라 - 꼬리 따라 발견한 좋은 곳. 서울 반려동물 동반 가능 장소 지도, 구별/카테고리별 필터링과 현위치 기반 탐색을 지원하는 Next.js 데모 프로젝트",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

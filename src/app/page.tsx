@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PawMark } from "@/components/BrandMark";
+import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -12,10 +13,10 @@ export default function Home() {
               <span className="h-2 w-2 rounded-full bg-brand-500" /> BETA · 서울 한정 반려생활 로컬 가이드
             </span>
             <h1 className="mt-7 text-balance text-[46px] font-bold leading-[1.08] tracking-[-0.06em] text-ink sm:text-6xl">
-              오늘은 어디로<br />함께 <span className="text-brand-600">갈까?</span>
+              오늘은 어디까지<br />함께 <span className="text-brand-600">갈까?</span>
             </h1>
             <p className="mt-6 max-w-lg text-balance text-base leading-7 text-muted sm:text-lg">
-              눈치 보지 않고 함께 머물 수 있는 곳. 서울의 카페, 식당, 공원을 동반 조건까지 꼼꼼하게 찾아보세요.
+              {BRAND_TAGLINE}. 서울의 카페, 식당, 공원을 동반 조건까지 꼼꼼하게 찾아보세요.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link href="/seoul" className="rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white shadow-card transition hover:bg-sage-700">
@@ -55,7 +56,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 lg:px-6">
-        <p className="text-xs font-bold tracking-[0.16em] text-brand-600">WHY 함께가개</p>
+        <p className="text-xs font-bold tracking-[0.16em] text-brand-600">WHY {BRAND_NAME}</p>
         <h2 className="mt-3 text-3xl font-bold tracking-[-0.04em] text-ink">검색보다 쉬운, 함께하는 외출</h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {[
