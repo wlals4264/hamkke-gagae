@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
-import { FEATURE_REQUEST_URL } from "@/lib/constants";
+import { FEEDBACK_FORM_URL } from "@/lib/constants";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -36,12 +36,12 @@ export default function RootLayout({
           <p className="mt-2">
             베타 버전입니다 (서울 한정) ·{" "}
             <a
-              href={FEATURE_REQUEST_URL}
+              href={FEEDBACK_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-sage-700 underline underline-offset-2 hover:text-sage-900"
             >
-              원하는 기능 제안하기
+              하고 싶은 말 남기기
             </a>
           </p>
         </footer>
