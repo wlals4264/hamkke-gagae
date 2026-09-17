@@ -7,14 +7,14 @@ interface GuNavProps {
 }
 
 function chipClass(active: boolean) {
-  return `rounded-full px-3 py-1.5 text-sm font-medium transition ${
-    active ? "bg-brand-600 text-white" : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+  return `whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-semibold transition ${
+    active ? "border-ink bg-ink text-white shadow-sm" : "border-ink/10 bg-white text-ink/65 hover:border-brand-500/50 hover:text-ink"
   }`;
 }
 
 export default function GuNav({ activeGu }: GuNavProps) {
   return (
-    <nav className="flex flex-wrap gap-2" aria-label="구 선택">
+    <nav className="flex gap-2 overflow-x-auto pb-1" aria-label="구 선택">
       <Link href="/seoul" className={chipClass(!activeGu)}>
         서울 전체
       </Link>

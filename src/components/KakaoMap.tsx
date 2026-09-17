@@ -110,16 +110,16 @@ export default function KakaoMap({
   if (status === "missing-key") {
     return (
       <div
-        className={`flex h-full w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-neutral-300 bg-neutral-50 p-6 text-center text-sm text-neutral-500 ${className ?? ""}`}
+        className={`paper-grid flex h-full w-full flex-col items-center justify-center gap-2 rounded-[20px] bg-sage-50 p-6 text-center text-sm text-ink/55 ${className ?? ""}`}
       >
-        <p className="font-medium text-neutral-700">카카오맵 API 키가 설정되지 않았어요</p>
+        <p className="font-bold text-ink">지도를 준비하고 있어요</p>
         <p>
           카카오 개발자센터(developers.kakao.com)에서 JavaScript 키를 발급받아{" "}
-          <code className="rounded bg-neutral-200 px-1 py-0.5">.env.local</code>의{" "}
-          <code className="rounded bg-neutral-200 px-1 py-0.5">NEXT_PUBLIC_KAKAO_MAP_KEY</code>에
+          <code className="rounded bg-white px-1 py-0.5">.env.local</code>의{" "}
+          <code className="rounded bg-white px-1 py-0.5">NEXT_PUBLIC_KAKAO_MAP_KEY</code>에
           넣어주세요.
         </p>
-        <p className="text-xs text-neutral-400">
+        <p className="text-xs text-ink/40">
           지금은 지도 없이도 장소 목록과 필터 UI는 정상 작동합니다.
         </p>
       </div>

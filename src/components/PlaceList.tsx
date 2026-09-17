@@ -9,7 +9,7 @@ interface PlaceListProps {
 export default function PlaceList({ places, distances }: PlaceListProps) {
   if (places.length === 0) {
     return (
-      <p className="rounded-lg border border-dashed border-neutral-200 p-4 text-sm text-neutral-500">
+      <p className="rounded-2xl border border-dashed border-ink/20 bg-white p-6 text-center text-sm text-ink/50">
         조건에 맞는 장소가 아직 없어요. 다른 구나 카테고리를 선택해보세요.
       </p>
     );

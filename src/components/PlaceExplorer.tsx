@@ -73,16 +73,16 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-ink/10 bg-white p-3 shadow-sm">
         {activeGu ? (
           <>
             <Link
               href={`/seoul/${activeGu}`}
               className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                 !activeCategory
-                  ? "bg-neutral-800 text-white"
-                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                  ? "bg-ink text-white"
+                  : "bg-cream text-ink/65 hover:bg-brand-50"
               }`}
             >
               전체
@@ -93,8 +93,8 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
                 href={`/seoul/${activeGu}/${cat.slug}`}
                 className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                   activeCategory === cat.slug
-                    ? "bg-neutral-800 text-white"
-                    : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                    ? "bg-ink text-white"
+                    : "bg-cream text-ink/65 hover:bg-brand-50"
                 }`}
               >
                 {cat.emoji} {cat.name}
@@ -108,8 +108,8 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
               onClick={() => setClientCategoryFilter("all")}
               className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                 clientCategoryFilter === "all"
-                  ? "bg-neutral-800 text-white"
-                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                  ? "bg-ink text-white"
+                  : "bg-cream text-ink/65 hover:bg-brand-50"
               }`}
             >
               전체
@@ -121,8 +121,8 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
                 onClick={() => setClientCategoryFilter(cat.slug)}
                 className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                   clientCategoryFilter === cat.slug
-                    ? "bg-neutral-800 text-white"
-                    : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                    ? "bg-ink text-white"
+                    : "bg-cream text-ink/65 hover:bg-brand-50"
                 }`}
               >
                 {cat.emoji} {cat.name}
@@ -134,7 +134,7 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
         <button
           type="button"
           onClick={handleFindMe}
-          className="ml-auto rounded-full border border-brand-600 px-3 py-1.5 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
+          className="ml-auto rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-brand-600"
         >
           {geoStatus === "loading" ? "위치 확인 중..." : "📍 내 주변 보기"}
         </button>
@@ -152,11 +152,11 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
         <p className="text-sm text-brand-700">현재 위치 기준으로 가까운 순서대로 정렬했어요.</p>
       )}
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div className="h-[420px] overflow-hidden rounded-xl border border-neutral-200 md:h-[600px]">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-[1.1fr_.9fr]">
+        <div className="h-[420px] overflow-hidden rounded-3xl border border-ink/10 bg-white p-1.5 shadow-card md:h-[620px]">
           <KakaoMap places={sortedPlaces} center={mapCenter} />
         </div>
-        <div className="max-h-[600px] overflow-y-auto pr-1">
+        <div className="max-h-[620px] overflow-y-auto pr-1">
           <PlaceList places={sortedPlaces} distances={distances} />
         </div>
       </div>

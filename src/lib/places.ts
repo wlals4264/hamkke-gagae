@@ -1,16 +1,33 @@
 import rawPlaces from "@/data/places.json";
 import type { Place, PlaceCategory } from "@/types/place";
 
-/**
- * MVP 대상 구 목록. 서울 전체 25개 구 중 데이터가 채워진 구만 우선 노출합니다.
- * 확장 시 이 배열에 구를 추가하고 src/data/places.json에 해당 구 데이터를 채우면 됩니다.
- */
+/** 서울 전체 25개 구 목록. */
 export const GU_LIST: { slug: string; name: string }[] = [
-  { slug: "mapo", name: "마포구" },
-  { slug: "seongdong", name: "성동구" },
-  { slug: "gangnam", name: "강남구" },
-  { slug: "yongsan", name: "용산구" },
   { slug: "jongno", name: "종로구" },
+  { slug: "jung", name: "중구" },
+  { slug: "yongsan", name: "용산구" },
+  { slug: "seongdong", name: "성동구" },
+  { slug: "gwangjin", name: "광진구" },
+  { slug: "dongdaemun", name: "동대문구" },
+  { slug: "jungnang", name: "중랑구" },
+  { slug: "seongbuk", name: "성북구" },
+  { slug: "gangbuk", name: "강북구" },
+  { slug: "dobong", name: "도봉구" },
+  { slug: "nowon", name: "노원구" },
+  { slug: "eunpyeong", name: "은평구" },
+  { slug: "seodaemun", name: "서대문구" },
+  { slug: "mapo", name: "마포구" },
+  { slug: "yangcheon", name: "양천구" },
+  { slug: "gangseo", name: "강서구" },
+  { slug: "guro", name: "구로구" },
+  { slug: "geumcheon", name: "금천구" },
+  { slug: "yeongdeungpo", name: "영등포구" },
+  { slug: "dongjak", name: "동작구" },
+  { slug: "gwanak", name: "관악구" },
+  { slug: "seocho", name: "서초구" },
+  { slug: "gangnam", name: "강남구" },
+  { slug: "songpa", name: "송파구" },
+  { slug: "gangdong", name: "강동구" },
 ];
 
 export const CATEGORY_LIST: { slug: PlaceCategory; name: string; emoji: string }[] = [

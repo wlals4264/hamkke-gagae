@@ -8,6 +8,32 @@ body {
 }
 
 body {
-  color: #171717;
-  background: #ffffff;
+  color: #20332d;
+  background: #fbf8f2;
+}
+
+::selection {
+  color: #20332d;
+  background: #ffd2bb;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .paper-grid {
+    background-image: radial-gradient(rgba(32, 51, 45, 0.1) 0.8px, transparent 0.8px);
+    background-size: 18px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hover-lift {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-3px);
+  }
 }

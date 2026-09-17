@@ -1,13 +1,14 @@
 {
-  "name": "seoul-pet-map",
+  "name": "hamkke-gagae",
   "version": "0.1.0",
   "private": true,
-  "description": "서울 반려동물 동반 가능 장소 지도 - 구별/카테고리별 필터링과 현위치 기반 탐색을 지원하는 Next.js 데모 프로젝트",
+  "description": "함께가개 - 서울 반려동물 동반 가능 장소 지도, 구별/카테고리별 필터링과 현위치 기반 탐색을 지원하는 Next.js 데모 프로젝트",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fetch:tour-data": "tsx scripts/fetch-tour-data.ts"
   },
   "dependencies": {
     "next": "^15.1.0",
@@ -15,14 +16,15 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.7.0",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.1.0",
-    "tailwindcss": "^3.4.15",
     "postcss": "^8.4.49",
-    "autoprefixer": "^10.4.20"
+    "tailwindcss": "^3.4.15",
+    "tsx": "^4.23.13",
+    "typescript": "^5.7.0"
   }
 }
