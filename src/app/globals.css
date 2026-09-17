@@ -1,3 +1,4 @@
+@config "../../tailwind.config.ts";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,13 +9,20 @@ body {
 }
 
 body {
-  color: #20332d;
-  background: #fbf8f2;
+  color: #3f3828;
+  background: #ffeed6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 ::selection {
-  color: #20332d;
-  background: #ffd2bb;
+  color: #3f3828;
+  background: #e8a07c;
+}
+
+:focus-visible {
+  outline: 3px solid #505c32;
+  outline-offset: 4px;
 }
 
 @layer utilities {
@@ -23,7 +31,7 @@ body {
   }
 
   .paper-grid {
-    background-image: radial-gradient(rgba(32, 51, 45, 0.1) 0.8px, transparent 0.8px);
+    background-image: radial-gradient(rgba(64, 54, 47, 0.1) 0.8px, transparent 0.8px);
     background-size: 18px 18px;
   }
 }

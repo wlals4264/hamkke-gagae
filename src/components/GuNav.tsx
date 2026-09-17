@@ -8,7 +8,7 @@ interface GuNavProps {
 
 function chipClass(active: boolean) {
   return `whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-semibold transition ${
-    active ? "border-ink bg-ink text-white shadow-sm" : "border-ink/10 bg-white text-ink/65 hover:border-brand-500/50 hover:text-ink"
+    active ? "border-ink bg-ink text-white shadow-sm" : "border-ink/10 bg-white text-muted hover:border-brand-500/50 hover:text-ink"
   }`;
 }
 

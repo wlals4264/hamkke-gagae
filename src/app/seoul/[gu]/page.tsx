@@ -36,7 +36,7 @@ export default async function GuPage({ params }: PageProps) {
       <header>
         <p className="text-xs font-bold tracking-[0.14em] text-brand-600">EXPLORE SEOUL</p>
         <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-ink">{gu.name}에서 함께 갈 곳</h1>
-        <p className="mt-2 text-sm text-ink/55">
+        <p className="mt-2 text-sm text-muted">
           {gu.name}에서 반려동물과 함께 갈 수 있는 장소 {places.length}곳을 찾았어요.
         </p>
       </header>

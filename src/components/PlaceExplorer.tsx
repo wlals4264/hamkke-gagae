@@ -82,7 +82,7 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
               className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                 !activeCategory
                   ? "bg-ink text-white"
-                  : "bg-cream text-ink/65 hover:bg-brand-50"
+                  : "bg-cream text-muted hover:bg-brand-50"
               }`}
             >
               전체
@@ -94,7 +94,7 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
                 className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                   activeCategory === cat.slug
                     ? "bg-ink text-white"
-                    : "bg-cream text-ink/65 hover:bg-brand-50"
+                    : "bg-cream text-muted hover:bg-brand-50"
                 }`}
               >
                 {cat.emoji} {cat.name}
@@ -109,7 +109,7 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
               className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                 clientCategoryFilter === "all"
                   ? "bg-ink text-white"
-                  : "bg-cream text-ink/65 hover:bg-brand-50"
+                  : "bg-cream text-muted hover:bg-brand-50"
               }`}
             >
               전체
@@ -122,7 +122,7 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
                 className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                   clientCategoryFilter === cat.slug
                     ? "bg-ink text-white"
-                    : "bg-cream text-ink/65 hover:bg-brand-50"
+                    : "bg-cream text-muted hover:bg-brand-50"
                 }`}
               >
                 {cat.emoji} {cat.name}
@@ -134,19 +134,19 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
         <button
           type="button"
           onClick={handleFindMe}
-          className="ml-auto rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-brand-600"
+          className="ml-auto rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-ink shadow-sm transition hover:bg-brand-100"
         >
           {geoStatus === "loading" ? "위치 확인 중..." : "📍 내 주변 보기"}
         </button>
       </div>
 
       {geoStatus === "denied" && (
-        <p className="text-sm text-red-500">
+        <p className="text-sm text-red-700">
           위치 권한이 거부됐어요. 브라우저 설정에서 위치 접근을 허용하거나, 구를 직접 선택해주세요.
         </p>
       )}
       {geoStatus === "unsupported" && (
-        <p className="text-sm text-red-500">이 브라우저에서는 위치 정보 기능을 사용할 수 없어요.</p>
+        <p className="text-sm text-red-700">이 브라우저에서는 위치 정보 기능을 사용할 수 없어요.</p>
       )}
       {geoStatus === "success" && (
         <p className="text-sm text-brand-700">현재 위치 기준으로 가까운 순서대로 정렬했어요.</p>

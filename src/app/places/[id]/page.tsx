@@ -68,7 +68,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <nav className="text-sm font-medium text-ink/45">
+      <nav className="text-sm font-medium text-muted">
         <Link href="/seoul" className="hover:underline">
           서울 전체
         </Link>
@@ -83,13 +83,13 @@ export default async function PlaceDetailPage({ params }: PageProps) {
       </nav>
 
       <header className="rounded-3xl border border-ink/10 bg-white p-6 shadow-sm">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <h1 className="text-3xl font-bold tracking-[-0.04em] text-ink">{place.name}</h1>
           <span className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-700">
             {category ? `${category.emoji} ${category.name}` : place.category}
           </span>
         </div>
-        <p className="mt-2 text-sm text-ink/50">{place.address}</p>
+        <p className="mt-2 text-sm text-muted">{place.address}</p>
       </header>
 
       <div className="h-[320px] overflow-hidden rounded-3xl border border-ink/10 bg-white p-1.5 shadow-card">
@@ -98,12 +98,12 @@ export default async function PlaceDetailPage({ params }: PageProps) {
 
       <section className="rounded-3xl border border-ink/10 bg-white p-6">
         <h2 className="text-lg font-bold text-ink">어떤 곳인가요?</h2>
-        <p className="mt-2 leading-7 text-ink/65">{place.description}</p>
+        <p className="mt-2 leading-7 text-muted">{place.description}</p>
       </section>
 
       <section className="rounded-3xl bg-sage-50 p-6">
         <h2 className="text-lg font-bold text-ink">함께 가기 전 체크</h2>
-        <ul className="mt-3 flex flex-col gap-2 text-sm text-ink/70">
+        <ul className="mt-3 flex flex-col gap-2 text-sm text-muted">
           <li>실내 동반: {place.petPolicy.indoor ? "가능" : "불가 또는 일부 구역만 가능"}</li>
           <li>목줄: {place.petPolicy.leashRequired ? "필수" : "지정 구역 내 해제 가능"}</li>
           {place.petPolicy.sizeLimit && <li>크기 제한: {place.petPolicy.sizeLimit}</li>}
@@ -126,7 +126,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
         </section>
       )}
 
-      <p className="text-xs text-neutral-400">
+      <p className="text-xs text-muted">
         ⚠️ 이 페이지의 정보는 개발용 샘플 데이터입니다. 실제 방문 전 운영 여부와 반려동물 동반
         조건을 다시 확인해주세요.
       </p>

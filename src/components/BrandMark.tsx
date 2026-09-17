@@ -3,14 +3,24 @@ import Link from "next/link";
 export function PawMark({ className = "h-10 w-10" }: { className?: string }) {
   return (
     <span
-      className={`relative inline-grid shrink-0 place-items-center rounded-[14px] bg-brand-500 text-white shadow-[inset_0_-3px_0_rgba(126,48,20,.14)] ${className}`}
+      className={`relative inline-grid shrink-0 place-items-center ${className}`}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 40 40" className="h-7 w-7" fill="none">
-        <ellipse cx="20" cy="24" rx="8" ry="7" fill="currentColor" />
-        <ellipse cx="11.5" cy="16" rx="3.4" ry="4.5" transform="rotate(-24 11.5 16)" fill="currentColor" />
-        <ellipse cx="28.5" cy="16" rx="3.4" ry="4.5" transform="rotate(24 28.5 16)" fill="currentColor" />
-        <ellipse cx="19" cy="12" rx="3.5" ry="4.7" fill="currentColor" />
+      <svg viewBox="0 0 64 64" className="h-full w-full overflow-visible" fill="none" focusable="false">
+        <g transform="translate(1 25) rotate(-18 16 16)" fill="#A5AF79">
+          <ellipse cx="4" cy="12" rx="3.8" ry="5" transform="rotate(-24 4 12)" />
+          <ellipse cx="12" cy="5.5" rx="4" ry="5.2" transform="rotate(-8 12 5.5)" />
+          <ellipse cx="21" cy="5.5" rx="4" ry="5.2" transform="rotate(8 21 5.5)" />
+          <ellipse cx="29" cy="12" rx="3.8" ry="5" transform="rotate(24 29 12)" />
+          <path d="M7 22c2-3 4-9 9.5-9s7.5 6 9.5 9c3 5 0 10-5 9-2-.4-3-1.5-4.5-1.5S14 30.6 12 31c-5 1-8-4-5-9Z" />
+        </g>
+        <g transform="translate(30 3) rotate(16 16 16)" fill="#E8A07C">
+          <ellipse cx="4" cy="12" rx="3.8" ry="5" transform="rotate(-24 4 12)" />
+          <ellipse cx="12" cy="5.5" rx="4" ry="5.2" transform="rotate(-8 12 5.5)" />
+          <ellipse cx="21" cy="5.5" rx="4" ry="5.2" transform="rotate(8 21 5.5)" />
+          <ellipse cx="29" cy="12" rx="3.8" ry="5" transform="rotate(24 29 12)" />
+          <path d="M7 22c2-3 4-9 9.5-9s7.5 6 9.5 9c3 5 0 10-5 9-2-.4-3-1.5-4.5-1.5S14 30.6 12 31c-5 1-8-4-5-9Z" />
+        </g>
       </svg>
     </span>
   );

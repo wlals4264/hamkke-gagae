@@ -46,7 +46,7 @@ export default async function GuCategoryPage({ params }: PageProps) {
         <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-ink">
           {gu.name}의 동반 가능 {category.name}
         </h1>
-        <p className="mt-2 text-sm text-ink/55">함께 머물기 좋은 곳 {places.length}곳을 찾았어요.</p>
+        <p className="mt-2 text-sm text-muted">함께 머물기 좋은 곳 {places.length}곳을 찾았어요.</p>
       </header>
       <GuNav activeGu={guSlug} />
       <PlaceExplorer places={places} activeGu={guSlug} activeCategory={category.slug} />

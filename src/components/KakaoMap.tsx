@@ -110,17 +110,14 @@ export default function KakaoMap({
   if (status === "missing-key") {
     return (
       <div
-        className={`paper-grid flex h-full w-full flex-col items-center justify-center gap-2 rounded-[20px] bg-sage-50 p-6 text-center text-sm text-ink/55 ${className ?? ""}`}
+        className={`paper-grid flex h-full w-full flex-col items-center justify-center gap-2 rounded-[20px] bg-sage-50 p-6 text-center text-sm text-muted ${className ?? ""}`}
       >
         <p className="font-bold text-ink">지도를 준비하고 있어요</p>
         <p>
-          카카오 개발자센터(developers.kakao.com)에서 JavaScript 키를 발급받아{" "}
-          <code className="rounded bg-white px-1 py-0.5">.env.local</code>의{" "}
-          <code className="rounded bg-white px-1 py-0.5">NEXT_PUBLIC_KAKAO_MAP_KEY</code>에
-          넣어주세요.
+          지금은 장소 목록에서 함께 갈 곳을 찾아보세요.
         </p>
-        <p className="text-xs text-ink/40">
-          지금은 지도 없이도 장소 목록과 필터 UI는 정상 작동합니다.
+        <p className="text-xs text-muted">
+          지역과 카테고리 필터는 계속 이용할 수 있어요.
         </p>
       </div>
     );
@@ -129,9 +126,9 @@ export default function KakaoMap({
   if (status === "error") {
     return (
       <div
-        className={`flex h-full w-full items-center justify-center rounded-xl border border-dashed border-red-300 bg-red-50 p-6 text-center text-sm text-red-500 ${className ?? ""}`}
+        className={`flex h-full w-full items-center justify-center rounded-xl border border-dashed border-red-300 bg-red-50 p-6 text-center text-sm text-red-700 ${className ?? ""}`}
       >
-        카카오맵 SDK를 불러오지 못했어요. API 키와 [플랫폼 &gt; Web] 도메인 등록 여부를 확인해주세요.
+        지도를 불러오지 못했어요. 잠시 후 새로고침해주세요. 장소 목록은 계속 이용할 수 있어요.
       </div>
     );
   }

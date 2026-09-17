@@ -68,9 +68,6 @@ const SEOUL_GU: { slug: string; name: string; code: string }[] = [
   { slug: "gangdong", name: "강동구", code: "740" },
 ];
 
-/** 이 앱이 다루는 카테고리에 대응되는 TourAPI contentTypeId만 사용합니다. */
-const RELEVANT_CONTENT_TYPES = new Set(["12", "38", "39"]);
-
 function mapCategory(contenttypeid: string, cat2: string): PlaceCategory | null {
   if (contenttypeid === "12") return "park";
   if (contenttypeid === "38") return "mall";
@@ -78,9 +75,22 @@ function mapCategory(contenttypeid: string, cat2: string): PlaceCategory | null 
   return null;
 }
 
+/**
+ * 반려동물 동반 태그는 contentTypeId=38(쇼핑)에 압도적으로 몰려있고 39(음식점·카페)/12(관광지·공원)엔
+ * 드뭅니다. 카테고리 편중을 막기 위해 타입별로 후보 수집량과 detailPetTour2 확인량을 따로 둡니다.
+ */
+const CONTENT_TYPE_PLAN: { contentTypeId: string; numOfRows: number; checkLimit: number }[] = [
+  { contentTypeId: "39", numOfRows: 100, checkLimit: 40 }, // 음식점·카페
+  { contentTypeId: "12", numOfRows: 60, checkLimit: 18 }, // 관광지(공원 등)
+  { contentTypeId: "38", numOfRows: 15, checkLimit: 5 }, // 쇼핑 (이미 충분히 잘 잡히므로 소량만)
+];
+
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+/** 공공데이터포털 일일 쿼터 초과 시 호출을 멈추기 위한 신호용 에러 */
+class QuotaExceededError extends Error {}
 
 async function callApi<T = unknown>(operation: string, params: Record<string, string>): Promise<T> {
   const url = new URL(`${END_POINT}/${operation}`);
@@ -93,10 +103,31 @@ async function callApi<T = unknown>(operation: string, params: Record<string, st
   }
 
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`${operation} 호출 실패: HTTP ${res.status}`);
-  const json = await res.json();
+  const text = await res.text();
+  let json: any;
+  try {
+    json = JSON.parse(text);
+  } catch {
+    throw new QuotaExceededError(`${operation} 응답이 JSON이 아닙니다 (쿼터 초과 가능성): ${text.slice(0, 200)}`);
+  }
+
+  // data.go.kr 게이트웨이 레벨 에러(쿼터 초과, 인증키 오류 등)는 response 래퍼 없이 내려옵니다.
+  const gatewayError = json.OpenAPI_ServiceResponse?.cmmMsgHeader;
+  if (gatewayError) {
+    if (gatewayError.returnReasonCode === "22" || /LIMITED_NUMBER/.test(gatewayError.errMsg ?? "")) {
+      throw new QuotaExceededError(`${operation}: ${gatewayError.returnAuthMsg ?? gatewayError.errMsg}`);
+    }
+    throw new Error(`${operation} 게이트웨이 오류: ${gatewayError.returnAuthMsg ?? gatewayError.errMsg}`);
+  }
+
   if (json.resultCode && json.resultCode !== "0000") {
-    throw new Error(`${operation} 호출 실패: ${json.resultMsg ?? JSON.stringify(json)}`);
+    if (json.resultCode === "22" || /LIMITED_NUMBER/.test(json.resultMsg ?? "")) {
+      throw new QuotaExceededError(`${operation}: ${json.resultMsg}`);
+    }
+    throw new Error(`${operation} 호출 실패: ${json.resultMsg ?? text.slice(0, 200)}`);
+  }
+  if (!json.response) {
+    throw new QuotaExceededError(`${operation} 응답 형식이 예상과 다릅니다: ${text.slice(0, 200)}`);
   }
   return json;
 }
@@ -125,18 +156,19 @@ interface DetailPetTourItem {
   acmpyNeedMtr: string;
 }
 
-async function fetchAreaBasedList(guCode: string): Promise<AreaBasedItem[]> {
+async function fetchAreaBasedList(guCode: string, contentTypeId: string, numOfRows: number): Promise<AreaBasedItem[]> {
   const json = await callApi<{
     response: { body: { items: "" | { item: AreaBasedItem[] } } };
   }>("areaBasedList2", {
     lDongRegnCd: "11",
     lDongSignguCd: guCode,
-    numOfRows: "60",
+    contentTypeId,
+    numOfRows: String(numOfRows),
     pageNo: "1",
   });
   const items = json.response.body.items;
   if (items === "") return [];
-  return items.item.filter((it) => RELEVANT_CONTENT_TYPES.has(it.contenttypeid)).slice(0, 35);
+  return items.item;
 }
 
 async function fetchPetTour(contentId: string): Promise<DetailPetTourItem | null> {
@@ -164,59 +196,102 @@ function buildPetPolicyNotes(pet: DetailPetTourItem): string {
     .join(" / ");
 }
 
+const outPath = resolve(ROOT, "src/data/places.json");
+
+function save(places: Map<string, Place>) {
+  const arr = Array.from(places.values());
+  writeFileSync(outPath, JSON.stringify(arr, null, 2) + "\n", "utf-8");
+  return arr;
+}
+
 async function main() {
-  const places: Place[] = [];
+  const places = new Map<string, Place>();
+  let quotaExceeded = false;
 
-  for (const gu of SEOUL_GU) {
+  outer: for (const gu of SEOUL_GU) {
     console.log(`[${gu.name}] 관광정보 조회 중...`);
-    const candidates = await fetchAreaBasedList(gu.code);
-    await sleep(150);
-
     let guHitCount = 0;
-    for (const candidate of candidates) {
-      const category = mapCategory(candidate.contenttypeid, candidate.cat2);
-      if (!category) continue;
 
-      const pet = await fetchPetTour(candidate.contentid);
-      await sleep(120);
-      if (!pet) continue;
+    for (const plan of CONTENT_TYPE_PLAN) {
+      let candidates: AreaBasedItem[];
+      try {
+        candidates = await fetchAreaBasedList(gu.code, plan.contentTypeId, plan.numOfRows);
+      } catch (err) {
+        if (err instanceof QuotaExceededError) {
+          console.error(`  쿼터 초과로 중단합니다: ${err.message}`);
+          quotaExceeded = true;
+          break outer;
+        }
+        throw err;
+      }
+      await sleep(150);
 
-      const detail = await fetchDetailCommon(candidate.contentid);
-      await sleep(120);
-      if (!detail) continue;
+      for (const candidate of candidates.slice(0, plan.checkLimit)) {
+        const category = mapCategory(candidate.contenttypeid, candidate.cat2);
+        if (!category) continue;
+        if (places.has(`tourapi-${candidate.contentid}`)) continue;
 
-      const lat = Number(detail.mapy);
-      const lng = Number(detail.mapx);
-      if (!lat || !lng) continue;
+        let pet: DetailPetTourItem | null;
+        try {
+          pet = await fetchPetTour(candidate.contentid);
+        } catch (err) {
+          if (err instanceof QuotaExceededError) {
+            console.error(`  쿼터 초과로 중단합니다: ${err.message}`);
+            quotaExceeded = true;
+            break outer;
+          }
+          throw err;
+        }
+        await sleep(120);
+        if (!pet) continue;
 
-      places.push({
-        id: `tourapi-${candidate.contentid}`,
-        name: detail.title,
-        category,
-        gu: gu.slug,
-        guName: gu.name,
-        address: [detail.addr1, detail.addr2].filter(Boolean).join(" "),
-        lat,
-        lng,
-        description: (detail.overview || detail.title).slice(0, 200),
-        petPolicy: {
-          indoor: /실내|전구역/.test(pet.acmpyTypeCd ?? ""),
-          leashRequired: true,
-          notes: buildPetPolicyNotes(pet) || undefined,
-        },
-        source: "tourapi",
-      });
-      guHitCount++;
+        const detail = await fetchDetailCommon(candidate.contentid);
+        await sleep(120);
+        if (!detail) continue;
+
+        const lat = Number(detail.mapy);
+        const lng = Number(detail.mapx);
+        if (!lat || !lng) continue;
+
+        places.set(`tourapi-${candidate.contentid}`, {
+          id: `tourapi-${candidate.contentid}`,
+          name: detail.title,
+          category,
+          gu: gu.slug,
+          guName: gu.name,
+          address: [detail.addr1, detail.addr2].filter(Boolean).join(" "),
+          lat,
+          lng,
+          description: (detail.overview || detail.title).slice(0, 200),
+          petPolicy: {
+            indoor: /실내|전구역/.test(pet.acmpyTypeCd ?? ""),
+            leashRequired: true,
+            notes: buildPetPolicyNotes(pet) || undefined,
+          },
+          source: "tourapi",
+        });
+        guHitCount++;
+      }
     }
-    console.log(`  → ${guHitCount}건 반려동물 동반 장소 확보`);
+
+    console.log(`  → ${guHitCount}건 반려동물 동반 장소 확보 (누적 ${places.size}건)`);
+    save(places); // 구 단위로 저장해 중간에 쿼터가 소진돼도 진행분을 잃지 않습니다.
   }
 
-  const outPath = resolve(ROOT, "src/data/places.json");
-  writeFileSync(outPath, JSON.stringify(places, null, 2) + "\n", "utf-8");
-  console.log(`\n완료: 총 ${places.length}건을 ${outPath}에 저장했습니다.`);
+  const arr = save(places);
+  console.log(
+    quotaExceeded
+      ? `\n쿼터 초과로 중간에 멈췄습니다. 현재까지 총 ${arr.length}건을 ${outPath}에 저장했습니다. 쿼터가 초기화된 뒤 다시 실행하면 이어서 채울 수 있습니다.`
+      : `\n완료: 총 ${arr.length}건을 ${outPath}에 저장했습니다.`,
+  );
 
   const byGu = new Map<string, number>();
-  for (const p of places) byGu.set(p.guName, (byGu.get(p.guName) ?? 0) + 1);
+  const byCategory = new Map<string, number>();
+  for (const p of arr) {
+    byGu.set(p.guName, (byGu.get(p.guName) ?? 0) + 1);
+    byCategory.set(p.category, (byCategory.get(p.category) ?? 0) + 1);
+  }
+  console.log("\n카테고리별 건수:", Object.fromEntries(byCategory));
   console.log("\n구별 건수:");
   for (const gu of SEOUL_GU) {
     console.log(`  ${gu.name}: ${byGu.get(gu.name) ?? 0}건`);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
+import { FEATURE_REQUEST_URL } from "@/lib/constants";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -30,8 +31,19 @@ export default function RootLayout({
       <body className={`${notoSansKr.className} antialiased`}>
         <SiteHeader />
         {children}
-        <footer className="border-t border-ink/10 px-4 py-8 text-center text-xs text-ink/45">
-          함께 걷는 서울을 만듭니다 · 함께가개
+        <footer className="border-t border-ink/10 px-4 py-8 text-center text-xs text-muted">
+          <p>함께 걷는 서울을 만듭니다 · 함께가개</p>
+          <p className="mt-2">
+            베타 버전입니다 (서울 한정) ·{" "}
+            <a
+              href={FEATURE_REQUEST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sage-700 underline underline-offset-2 hover:text-sage-900"
+            >
+              원하는 기능 제안하기
+            </a>
+          </p>
         </footer>
       </body>
     </html>

@@ -21,22 +21,22 @@ export default function PlaceCard({ place, distanceKm }: PlaceCardProps) {
           {category ? `${category.emoji} ${category.name}` : place.category}
         </span>
       </div>
-      <p className="mt-1 text-sm text-ink/45">{place.address}</p>
-      <p className="mt-3 line-clamp-2 text-sm leading-6 text-ink/65">{place.description}</p>
+      <p className="mt-1 text-sm text-muted">{place.address}</p>
+      <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted">{place.description}</p>
       <div className="mt-2 flex flex-wrap gap-1 text-xs">
         {place.petPolicy.indoor && (
           <span className="rounded-md bg-sage-50 px-2 py-1 text-sage-700">✓ 실내 동반</span>
         )}
         {!place.petPolicy.indoor && (
-          <span className="rounded-md bg-cream px-2 py-1 text-ink/60">실외/일부 구역</span>
+          <span className="rounded-md bg-cream px-2 py-1 text-muted">실외/일부 구역</span>
         )}
         {place.petPolicy.sizeLimit && (
-          <span className="rounded-md bg-cream px-2 py-1 text-ink/60">
+          <span className="rounded-md bg-cream px-2 py-1 text-muted">
             {place.petPolicy.sizeLimit}
           </span>
         )}
         {typeof distanceKm === "number" && (
-          <span className="rounded bg-blue-100 px-2 py-0.5 font-medium text-blue-700">
+          <span className="rounded bg-sage-100 px-2 py-0.5 font-medium text-sage-700">
             내 위치에서 {distanceKm.toFixed(1)}km
           </span>
         )}
