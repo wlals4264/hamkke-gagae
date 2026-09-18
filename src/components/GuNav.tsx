@@ -1,11 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { GU_LIST } from "@/lib/catalog";
-import { loadKakaoSdk } from "@/lib/kakao";
-import type { KakaoRegionResult } from "@/types/kakao";
 
 interface GuNavProps {
   activeGu?: string;
@@ -14,60 +10,7 @@ interface GuNavProps {
 const districts = [...GU_LIST].sort((a, b) => a.name.localeCompare(b.name, "ko"));
 
 export default function GuNav({ activeGu }: GuNavProps) {
-  const router = useRouter();
-  const [isDetecting, setIsDetecting] = useState(!activeGu);
   const selectedName = GU_LIST.find((gu) => gu.slug === activeGu)?.name ?? "서울 전체";
-
-  useEffect(() => {
-    if (activeGu || typeof window === "undefined") {
-      setIsDetecting(false);
-      return;
-    }
-
-    // 감지에 "성공"했을 때만 세션당 1회로 제한합니다. 여기서 미리 플래그를 찍으면
-    // 같은 탭에서 /seoul을 다시 열었을 때(뒤로가기, 재방문 등) 감지 자체를 건너뛰게 되어
-    // 매번 "서울 전체"만 보이는 문제가 있었습니다.
-    const sessionKey = "kkori-ttara-location-detected";
-    if (window.sessionStorage.getItem(sessionKey)) {
-      setIsDetecting(false);
-      return;
-    }
-
-    if (!("geolocation" in navigator)) {
-      setIsDetecting(false);
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        loadKakaoSdk()
-          .then(() => {
-            const geocoder = new window.kakao.maps.services.Geocoder();
-            geocoder.coord2RegionCode(
-              coords.longitude,
-              coords.latitude,
-              (regions: KakaoRegionResult[], status: string) => {
-                if (status !== "OK") return;
-                const district = regions.find(
-                  (region) =>
-                    region.region_type === "H" &&
-                    GU_LIST.some((gu) => gu.name === region.region_2depth_name),
-                );
-                const gu = GU_LIST.find((item) => item.name === district?.region_2depth_name);
-                if (gu) {
-                  window.sessionStorage.setItem(sessionKey, "true");
-                  router.replace(`/seoul/${gu.slug}`);
-                }
-              },
-            );
-          })
-          .catch(() => undefined)
-          .finally(() => setIsDetecting(false));
-      },
-      () => setIsDetecting(false),
-      { enableHighAccuracy: false, timeout: 6000, maximumAge: 300000 },
-    );
-  }, [activeGu, router]);
 
   return (
     <details key={activeGu ?? "all"} className="group rounded-2xl border border-ink/10 bg-white shadow-sm">
@@ -81,9 +24,7 @@ export default function GuNav({ activeGu }: GuNavProps) {
           </span>
           <span>
             <span className="block text-xs font-medium text-muted">탐색 지역</span>
-            <span className="mt-0.5 block text-base font-bold text-ink">
-              {isDetecting ? "현재 지역 확인 중..." : selectedName}
-            </span>
+            <span className="mt-0.5 block text-base font-bold text-ink">{selectedName}</span>
           </span>
         </span>
         <span className="flex shrink-0 items-center gap-2 text-sm font-semibold text-sage-700">
