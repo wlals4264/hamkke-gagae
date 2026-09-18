@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import GuNav from "@/components/GuNav";
 import PlaceExplorer from "@/components/PlaceExplorer";
-import { GU_LIST, getGuBySlug, getPlacesByGu } from "@/lib/places";
+import { getGuBySlug, getPlacesByGu } from "@/lib/places";
+
+// 제보 승인분이 바로 반영돼야 해서 정적 생성 대신 매 요청 렌더링
+export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ gu: string }>;
-}
-
-/** 데이터가 채워진 구만큼만 정적 페이지로 미리 생성 (SSG) */
-export function generateStaticParams() {
-  return GU_LIST.map((gu) => ({ gu: gu.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -29,7 +27,7 @@ export default async function GuPage({ params }: PageProps) {
   const gu = getGuBySlug(guSlug);
   if (!gu) notFound();
 
-  const places = getPlacesByGu(guSlug);
+  const places = await getPlacesByGu(guSlug);
 
   return (
     <main className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6">

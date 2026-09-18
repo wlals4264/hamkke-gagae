@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Place } from "@/types/place";
-import { CATEGORY_LIST } from "@/lib/places";
+import { CATEGORY_LIST } from "@/lib/catalog";
 
 interface PlaceCardProps {
   place: Place;

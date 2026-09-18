@@ -36,6 +36,13 @@ export default function RootLayout({
           <p className="mt-2">
             베타 버전입니다 (서울 한정) ·{" "}
             <a
+              href="/report"
+              className="font-semibold text-sage-700 underline underline-offset-2 hover:text-sage-900"
+            >
+              장소 제보하기
+            </a>{" "}
+            ·{" "}
+            <a
               href={FEEDBACK_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"

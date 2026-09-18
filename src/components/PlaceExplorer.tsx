@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Place, PlaceCategory } from "@/types/place";
-import { CATEGORY_LIST } from "@/lib/places";
+import { CATEGORY_LIST } from "@/lib/catalog";
 import { haversineDistanceKm } from "@/lib/geo";
 import KakaoMap from "./KakaoMap";
 import PlaceList from "./PlaceList";

@@ -17,7 +17,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const place = getPlaceById(id);
+  const place = await getPlaceById(id);
   if (!place) return {};
 
   return {
@@ -33,11 +33,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function PlaceDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const place = getPlaceById(id);
+  const place = await getPlaceById(id);
   if (!place) notFound();
 
   const category = CATEGORY_LIST.find((c) => c.slug === place.category);
-  const nearby = getNearbyPlaces(place);
+  const nearby = await getNearbyPlaces(place);
 
   const checklistItems = [
     {

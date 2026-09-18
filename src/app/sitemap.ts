@@ -7,8 +7,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
  * 서울 전체 / 구별 / 구+카테고리별 / 장소 상세 페이지를 모두 사이트맵에 포함합니다.
  * "구별로 검색되는" SEO 효과를 위해 만든 페이지들이므로, 사이트맵에서도 누락 없이 노출되도록 관리합니다.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
-  const places = getAllPlaces();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const places = await getAllPlaces();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/`, changeFrequency: "monthly", priority: 0.5 },

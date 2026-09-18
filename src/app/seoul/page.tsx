@@ -8,8 +8,10 @@ export const metadata: Metadata = {
   description: "서울 전역의 반려동물 동반 가능한 카페, 식당, 공원, 쇼핑몰을 한눈에 찾아보세요.",
 };
 
-export default function SeoulPage() {
-  const places = getAllPlaces();
+export const dynamic = "force-dynamic";
+
+export default async function SeoulPage() {
+  const places = await getAllPlaces();
 
   return (
     <main className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6">

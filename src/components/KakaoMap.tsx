@@ -3,28 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import type { Place } from "@/types/place";
 import type { KakaoMapInstance, KakaoMarkerInstance } from "@/types/kakao";
+import { loadKakaoSdk } from "@/lib/kakao";
 
 const KAKAO_APP_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
-
-/** 카카오맵 SDK는 브라우저에 한 번만 로드하면 되므로 모듈 스코프에서 로딩 상태를 공유합니다. */
-let sdkLoadingPromise: Promise<void> | null = null;
-
-function loadKakaoSdk(): Promise<void> {
-  if (typeof window === "undefined") return Promise.resolve();
-  if (window.kakao?.maps) return Promise.resolve();
-  if (sdkLoadingPromise) return sdkLoadingPromise;
-
-  sdkLoadingPromise = new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_APP_KEY}&autoload=false`;
-    script.async = true;
-    script.onload = () => window.kakao.maps.load(() => resolve());
-    script.onerror = () => reject(new Error("kakao sdk load failed"));
-    document.head.appendChild(script);
-  });
-
-  return sdkLoadingPromise;
-}
 
 interface KakaoMapProps {
   places: Place[];

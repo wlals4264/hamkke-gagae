@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     body?: unknown;
   };
 
-  if (typeof placeId !== "string" || !getPlaceById(placeId)) {
+  if (typeof placeId !== "string" || !(await getPlaceById(placeId))) {
     return NextResponse.json({ error: "존재하지 않는 장소입니다." }, { status: 400 });
   }
   if (typeof rating !== "number" || !Number.isInteger(rating) || rating < 1 || rating > 5) {

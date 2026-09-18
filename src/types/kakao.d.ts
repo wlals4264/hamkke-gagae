@@ -10,6 +10,9 @@ declare global {
     kakao: {
       maps: {
         load: (callback: () => void) => void;
+        services: {
+          Geocoder: new () => KakaoGeocoderInstance;
+        };
         LatLng: new (lat: number, lng: number) => unknown;
         Map: new (
           container: HTMLElement,
@@ -47,4 +50,17 @@ export interface KakaoMapInstance {
 
 export interface KakaoMarkerInstance {
   setMap: (map: KakaoMapInstance | null) => void;
+}
+
+export interface KakaoGeocoderInstance {
+  coord2RegionCode: (
+    lng: number,
+    lat: number,
+    callback: (result: KakaoRegionResult[], status: string) => void,
+  ) => void;
+}
+
+export interface KakaoRegionResult {
+  region_type: string;
+  region_2depth_name: string;
 }
