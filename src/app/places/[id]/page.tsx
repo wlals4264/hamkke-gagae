@@ -98,7 +98,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
         </div>
         <div className="mt-2 flex items-center gap-1">
           <p className="text-sm text-muted">{place.address}</p>
-          <CopyButton value={place.address} label="주소 복사" />
+          <CopyButton value={place.address} label="주소 복사" toastMessage="주소가 복사되었습니다" />
         </div>
         <div className="mt-4">
           <PlaceActions place={place} />

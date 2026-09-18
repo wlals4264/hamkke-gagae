@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import type { Place } from "@/types/place";
+import Snackbar from "./Snackbar";
 
 interface PlaceActionsProps {
   place: Place;
@@ -59,17 +60,7 @@ export default function PlaceActions({ place }: PlaceActionsProps) {
         </button>
       </div>
 
-      <div
-        role="status"
-        aria-live="polite"
-        className={`fixed inset-x-0 bottom-6 z-50 flex justify-center transition ${
-          toastVisible ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      >
-        <span className="rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-card">
-          ✓ 링크가 복사되었습니다
-        </span>
-      </div>
+      <Snackbar message="링크가 복사되었습니다" visible={toastVisible} />
     </>
   );
 }
