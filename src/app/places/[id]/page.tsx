@@ -38,6 +38,23 @@ export default async function PlaceDetailPage({ params }: PageProps) {
   const category = CATEGORY_LIST.find((c) => c.slug === place.category);
   const nearby = getNearbyPlaces(place);
 
+  const checklistItems = [
+    {
+      label: "실내 동반",
+      value: place.petPolicy.indoor ? "가능" : "불가 또는 일부 구역만 가능",
+      icon: place.petPolicy.indoor ? "🏠" : "🚪",
+    },
+    {
+      label: "목줄",
+      value: place.petPolicy.leashRequired ? "필수" : "지정 구역 내 해제 가능",
+      icon: "🦮",
+    },
+    ...(place.petPolicy.sizeLimit
+      ? [{ label: "크기 제한", value: place.petPolicy.sizeLimit, icon: "📏" }]
+      : []),
+    ...(place.petPolicy.notes ? [{ label: "참고", value: place.petPolicy.notes, icon: "📝" }] : []),
+  ];
+
   // 검색엔진이 "반려동물 동반 가능 장소"라는 것을 명확히 인식하도록 구조화 데이터를 심어둡니다.
   const jsonLd = {
     "@context": "https://schema.org",
@@ -116,26 +133,59 @@ export default async function PlaceDetailPage({ params }: PageProps) {
 
       <section className="rounded-3xl bg-sage-50 p-6">
         <h2 className="text-lg font-bold text-ink">함께 가기 전 체크</h2>
-        <ul className="mt-3 flex flex-col gap-2 text-sm text-muted">
-          <li>실내 동반: {place.petPolicy.indoor ? "가능" : "불가 또는 일부 구역만 가능"}</li>
-          <li>목줄: {place.petPolicy.leashRequired ? "필수" : "지정 구역 내 해제 가능"}</li>
-          {place.petPolicy.sizeLimit && <li>크기 제한: {place.petPolicy.sizeLimit}</li>}
-          {place.petPolicy.notes && <li>참고: {place.petPolicy.notes}</li>}
-        </ul>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2">
+          {checklistItems.map((item) => (
+            <div key={item.label} className="flex items-start gap-3 rounded-2xl bg-white/70 px-4 py-3">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-base">
+                {item.icon}
+              </span>
+              <div className="min-w-0">
+                <p className="text-xs font-medium text-muted">{item.label}</p>
+                <p className="text-sm font-bold leading-5 text-ink">{item.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {nearby.length > 0 && (
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900">{place.guName}의 다른 장소</h2>
-          <ul className="mt-2 flex flex-col gap-1">
-            {nearby.map((p) => (
-              <li key={p.id}>
-                <Link href={`/places/${p.id}`} className="text-brand-700 hover:underline">
-                  {p.name}
+        <section className="rounded-3xl border border-ink/10 bg-white p-6">
+          <h2 className="text-lg font-bold text-ink">{place.guName}의 다른 장소</h2>
+          <div className="mt-2 flex flex-col divide-y divide-ink/5">
+            {nearby.map((p) => {
+              const nearbyCategory = CATEGORY_LIST.find((c) => c.slug === p.category);
+              return (
+                <Link
+                  key={p.id}
+                  href={`/places/${p.id}`}
+                  className="group flex items-center justify-between gap-3 py-3 first:pt-0 last:pb-0"
+                >
+                  <span className="flex min-w-0 items-center gap-2.5">
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-50 text-base">
+                      {nearbyCategory?.emoji ?? "📍"}
+                    </span>
+                    <span className="truncate font-semibold text-ink group-hover:text-brand-700">
+                      {p.name}
+                    </span>
+                  </span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-4 w-4 shrink-0 text-muted transition group-hover:text-brand-700"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="m9 6 6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </Link>
-              </li>
-            ))}
-          </ul>
+              );
+            })}
+          </div>
         </section>
       )}
 
