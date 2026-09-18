@@ -9,6 +9,20 @@ interface GuNavProps {
   activeGu?: string;
 }
 
+function ChevronIcon({ direction }: { direction: "left" | "right" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
+      <path
+        d={direction === "left" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"}
+        stroke="currentColor"
+        strokeWidth={2.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function chipClass(active: boolean) {
   return `whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-semibold transition ${
     active ? "border-ink bg-ink text-white shadow-sm" : "border-ink/10 bg-white text-muted hover:border-brand-500/50 hover:text-ink"
@@ -62,27 +76,27 @@ export default function GuNav({ activeGu }: GuNavProps) {
 
       {canScrollLeft && (
         <>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-cream to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-cream to-transparent" />
           <button
             type="button"
             onClick={() => scrollByAmount(-240)}
             aria-label="구 목록 왼쪽으로 스크롤"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 grid h-7 w-7 place-items-center rounded-full border border-ink/10 bg-white text-ink shadow-sm"
+            className="absolute -left-1 top-1/2 -translate-y-1/2 grid h-8 w-8 place-items-center rounded-full border border-ink/20 bg-white text-ink shadow-md hover:border-ink/40"
           >
-            ‹
+            <ChevronIcon direction="left" />
           </button>
         </>
       )}
       {canScrollRight && (
         <>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-cream to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-cream to-transparent" />
           <button
             type="button"
             onClick={() => scrollByAmount(240)}
             aria-label="구 목록 오른쪽으로 스크롤"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 grid h-7 w-7 place-items-center rounded-full border border-ink/10 bg-white text-ink shadow-sm"
+            className="absolute -right-1 top-1/2 -translate-y-1/2 grid h-8 w-8 place-items-center rounded-full border border-ink/20 bg-white text-ink shadow-md hover:border-ink/40"
           >
-            ›
+            <ChevronIcon direction="right" />
           </button>
         </>
       )}
