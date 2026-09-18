@@ -34,11 +34,12 @@ export default function SeoulLocationGate({ children }: { children: ReactNode })
     }
 
     let settled = false;
+    // 감지 실패/거부/타임아웃 시엔 세션 플래그를 세우지 않는다. 여기서 플래그를 찍으면
+    // 다음 방문(같은 탭)에서 재시도할 기회 없이 계속 "서울 전체"만 보이게 된다.
     const reveal = () => {
       if (settled) return;
       settled = true;
       window.clearTimeout(fallback);
-      window.sessionStorage.setItem(SESSION_KEY, "true");
       setReady(true);
     };
     const fallback = window.setTimeout(reveal, FALLBACK_MS);
