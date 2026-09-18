@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import KakaoMap from "@/components/KakaoMap";
 import PlaceActions from "@/components/PlaceActions";
+import CopyButton from "@/components/CopyButton";
 import { CATEGORY_LIST, getAllPlaces, getPlaceById, getNearbyPlaces } from "@/lib/places";
 
 interface PageProps {
@@ -95,7 +96,10 @@ export default async function PlaceDetailPage({ params }: PageProps) {
             </span>
           )}
         </div>
-        <p className="mt-2 text-sm text-muted">{place.address}</p>
+        <div className="mt-2 flex items-center gap-1">
+          <p className="text-sm text-muted">{place.address}</p>
+          <CopyButton value={place.address} label="주소 복사" />
+        </div>
         <div className="mt-4">
           <PlaceActions place={place} />
         </div>
