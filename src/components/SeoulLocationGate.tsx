@@ -2,9 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { GU_LIST } from "@/lib/catalog";
-import { loadKakaoSdk } from "@/lib/kakao";
-import type { KakaoRegionResult } from "@/types/kakao";
+import { resolveGuFromCoords } from "@/lib/kakao";
 
 const SESSION_KEY = "kkori-ttara-location-detected";
 // 권한 프롬프트를 사용자가 오래 방치하는 경우를 대비한 안전장치. geolocation의 timeout
@@ -46,33 +44,17 @@ export default function SeoulLocationGate({ children }: { children: ReactNode })
 
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
-        loadKakaoSdk()
-          .then(() => {
-            const geocoder = new window.kakao.maps.services.Geocoder();
-            geocoder.coord2RegionCode(
-              coords.longitude,
-              coords.latitude,
-              (regions: KakaoRegionResult[], status: string) => {
-                if (settled) return;
-                const district =
-                  status === "OK"
-                    ? regions.find(
-                        (region) =>
-                          region.region_type === "H" &&
-                          GU_LIST.some((gu) => gu.name === region.region_2depth_name),
-                      )
-                    : undefined;
-                const gu = GU_LIST.find((item) => item.name === district?.region_2depth_name);
-                if (gu) {
-                  settled = true;
-                  window.clearTimeout(fallback);
-                  window.sessionStorage.setItem(SESSION_KEY, "true");
-                  router.replace(`/seoul/${gu.slug}`);
-                  return;
-                }
-                reveal();
-              },
-            );
+        resolveGuFromCoords(coords.latitude, coords.longitude)
+          .then((gu) => {
+            if (settled) return;
+            if (gu) {
+              settled = true;
+              window.clearTimeout(fallback);
+              window.sessionStorage.setItem(SESSION_KEY, "true");
+              router.replace(`/seoul/${gu.slug}`);
+              return;
+            }
+            reveal();
           })
           .catch(() => reveal());
       },

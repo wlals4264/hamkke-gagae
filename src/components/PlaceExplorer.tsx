@@ -2,9 +2,11 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Place, PlaceCategory } from "@/types/place";
 import { CATEGORY_LIST } from "@/lib/catalog";
 import { haversineDistanceKm } from "@/lib/geo";
+import { resolveGuFromCoords } from "@/lib/kakao";
 import KakaoMap from "./KakaoMap";
 import PlaceList from "./PlaceList";
 import { buttonClass } from "@/lib/ui/button";
@@ -21,6 +23,7 @@ interface PlaceExplorerProps {
 type GeoStatus = "idle" | "loading" | "success" | "denied" | "unsupported";
 
 export default function PlaceExplorer({ places, activeGu, activeCategory }: PlaceExplorerProps) {
+  const router = useRouter();
   // "서울 전체"(구 미선택) 화면에서만 쓰는 클라이언트 사이드 카테고리 필터.
   // 구가 선택된 상태에서는 카테고리 전환이 /seoul/[gu]/[category] 라우트 이동으로 처리되므로 필요 없음.
   const [clientCategoryFilter, setClientCategoryFilter] = useState<PlaceCategory | "all">("all");
@@ -64,8 +67,22 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
     }
     setGeoStatus("loading");
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setUserLocation({ lat: position.coords.latitude, lng: position.coords.longitude });
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+        // "서울 전체" 화면에서는 가까운 구로 바로 이동시켜준다. 이미 특정 구를 보고
+        // 있다면(사용자가 직접 고른 선택) 구는 그대로 두고 거리순 정렬만 해준다.
+        if (!activeGu) {
+          try {
+            const gu = await resolveGuFromCoords(latitude, longitude);
+            if (gu) {
+              router.push(`/seoul/${gu.slug}`);
+              return;
+            }
+          } catch {
+            // 지오코딩 실패 시 서울 전체 기준 거리순 정렬로 폴백
+          }
+        }
+        setUserLocation({ lat: latitude, lng: longitude });
         setGeoStatus("success");
       },
       () => setGeoStatus("denied"),

@@ -1,3 +1,6 @@
+import { GU_LIST } from "@/lib/catalog";
+import type { KakaoRegionResult } from "@/types/kakao";
+
 const KAKAO_APP_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
 
 let sdkLoadingPromise: Promise<void> | null = null;
@@ -23,4 +26,26 @@ export function loadKakaoSdk(): Promise<void> {
   });
 
   return sdkLoadingPromise;
+}
+
+/** 좌표를 카카오 역지오코딩으로 우리 GU_LIST 상의 구로 매핑합니다. 매칭 실패 시 null. */
+export async function resolveGuFromCoords(
+  lat: number,
+  lng: number,
+): Promise<{ slug: string; name: string } | null> {
+  await loadKakaoSdk();
+  return new Promise((resolve) => {
+    const geocoder = new window.kakao.maps.services.Geocoder();
+    geocoder.coord2RegionCode(lng, lat, (regions: KakaoRegionResult[], status: string) => {
+      const district =
+        status === "OK"
+          ? regions.find(
+              (region) =>
+                region.region_type === "H" && GU_LIST.some((gu) => gu.name === region.region_2depth_name),
+            )
+          : undefined;
+      const gu = GU_LIST.find((item) => item.name === district?.region_2depth_name);
+      resolve(gu ?? null);
+    });
+  });
 }
