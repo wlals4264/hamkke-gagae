@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import KakaoMap from "@/components/KakaoMap";
+import PlaceActions from "@/components/PlaceActions";
 import { CATEGORY_LIST, getAllPlaces, getPlaceById, getNearbyPlaces } from "@/lib/places";
 
 interface PageProps {
@@ -88,8 +89,16 @@ export default async function PlaceDetailPage({ params }: PageProps) {
           <span className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-700">
             {category ? `${category.emoji} ${category.name}` : place.category}
           </span>
+          {place.source === "petkorea" && (
+            <span className="rounded-full bg-sage-100 px-2.5 py-1 text-xs font-bold text-sage-700">
+              🛡️ 식약처 인증
+            </span>
+          )}
         </div>
         <p className="mt-2 text-sm text-muted">{place.address}</p>
+        <div className="mt-4">
+          <PlaceActions place={place} />
+        </div>
       </header>
 
       <div className="h-[320px] overflow-hidden rounded-3xl border border-ink/10 bg-white p-1.5 shadow-card">

@@ -17,8 +17,15 @@ export default function PlaceCard({ place, distanceKm }: PlaceCardProps) {
     >
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-bold text-ink group-hover:text-brand-700">{place.name}</h3>
-        <span className="shrink-0 whitespace-nowrap rounded-full bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-700">
-          {category ? `${category.emoji} ${category.name}` : place.category}
+        <span className="flex shrink-0 flex-wrap justify-end gap-1">
+          <span className="whitespace-nowrap rounded-full bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-700">
+            {category ? `${category.emoji} ${category.name}` : place.category}
+          </span>
+          {place.source === "petkorea" && (
+            <span className="whitespace-nowrap rounded-full bg-sage-100 px-2.5 py-1 text-xs font-bold text-sage-700">
+              🛡️ 식약처 인증
+            </span>
+          )}
         </span>
       </div>
       <p className="mt-1 text-sm text-muted">{place.address}</p>
