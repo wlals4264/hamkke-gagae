@@ -1600,7 +1600,7 @@
   {
     "id": "petkorea-yangcheon-9",
     "name": "79파운야드 목동41타워점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yangcheon",
     "guName": "양천구",
     "address": "서울특별시 양천구 목동동로 293(지상1층 1-44,45,46호 목동, 현대41타워)",
@@ -1617,7 +1617,7 @@
   {
     "id": "petkorea-jung-10",
     "name": "97.7화씨",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jung",
     "guName": "중구",
     "address": "서울특별시 중구 난계로15길 41-7(지하1층 황학동)",
@@ -1634,7 +1634,7 @@
   {
     "id": "petkorea-mapo-11",
     "name": "9램(9ram)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 포은로 105(2층 망원동)",
@@ -1923,7 +1923,7 @@
   {
     "id": "petkorea-jungnang-28",
     "name": "개인공간",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jungnang",
     "guName": "중랑구",
     "address": "서울특별시 중랑구 용마산로 670(D동 DB105호 망우동, 신내역 프라디움 더 테라스)",
@@ -2025,7 +2025,7 @@
   {
     "id": "petkorea-yangcheon-34",
     "name": "굿피플초이스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yangcheon",
     "guName": "양천구",
     "address": "서울특별시 양천구 중앙로 245(1층 신정동)",
@@ -2042,7 +2042,7 @@
   {
     "id": "petkorea-yongsan-35",
     "name": "그라메도(GRMD)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 두텁바위로1길 22(1층 갈월동)",
@@ -2110,7 +2110,7 @@
   {
     "id": "petkorea-seongbuk-39",
     "name": "그루버스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 삼선교로16길 26-3(1층 삼선동2가)",
@@ -2127,7 +2127,7 @@
   {
     "id": "petkorea-dongdaemun-40",
     "name": "그리팅(Greetin')",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 천호대로83길 9(1층 장안동)",
@@ -2144,7 +2144,7 @@
   {
     "id": "petkorea-seongdong-41",
     "name": "그린룸 GRIN ROOM",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongdong",
     "guName": "성동구",
     "address": "서울특별시 성동구 왕십리로 136(3층 성수동1가)",
@@ -2161,7 +2161,7 @@
   {
     "id": "petkorea-mapo-42",
     "name": "금수연남",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 동교로39길 7(2층 연남동)",
@@ -2178,7 +2178,7 @@
   {
     "id": "petkorea-seongdong-43",
     "name": "금은방",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongdong",
     "guName": "성동구",
     "address": "서울특별시 성동구 송정14길 1(지1층 송정동)",
@@ -2212,7 +2212,7 @@
   {
     "id": "petkorea-mapo-45",
     "name": "기호",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 삼개로 28-5(지1,1층 도화동)",
@@ -2246,7 +2246,7 @@
   {
     "id": "petkorea-gangdong-47",
     "name": "꼬메",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangdong",
     "guName": "강동구",
     "address": "서울특별시 강동구 올림픽로91길 30(상가동 1층 131호 암사동, 힐스테이트 강동 리버뷰)",
@@ -2314,7 +2314,7 @@
   {
     "id": "petkorea-gangnam-51",
     "name": "나의 모양(my shape)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 역삼로69길 5(지상1층 101호 대치동)",
@@ -2331,7 +2331,7 @@
   {
     "id": "petkorea-yeongdeungpo-52",
     "name": "네가 있어 고마워",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yeongdeungpo",
     "guName": "영등포구",
     "address": "서울특별시 영등포구 양평로28길 33(제이동 1층 101호 양평동6가, 아트리버빌)",
@@ -2365,7 +2365,7 @@
   {
     "id": "petkorea-gangdong-54",
     "name": "노스티 상일점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangdong",
     "guName": "강동구",
     "address": "서울특별시 강동구 상일로7길 11(101,102호 상일동)",
@@ -2382,7 +2382,7 @@
   {
     "id": "petkorea-geumcheon-55",
     "name": "놀면뭐하개",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "geumcheon",
     "guName": "금천구",
     "address": "서울특별시 금천구 남부순환로 1390(전영수내과의원 4층 독산동)",
@@ -2433,7 +2433,7 @@
   {
     "id": "petkorea-mapo-58",
     "name": "누부크",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 양화진2길 13(사이넥스 합정 1,2층 합정동)",
@@ -2450,7 +2450,7 @@
   {
     "id": "petkorea-mapo-59",
     "name": "누야그",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 희우정로10안길 7(1층 101호 망원동)",
@@ -2467,7 +2467,7 @@
   {
     "id": "petkorea-mapo-60",
     "name": "뉴케이스 망원본점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 마포나루길 420(3층 망원동)",
@@ -2484,7 +2484,7 @@
   {
     "id": "petkorea-seongbuk-61",
     "name": "늘",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 성북로14길 3(성북동)",
@@ -2569,7 +2569,7 @@
   {
     "id": "petkorea-seocho-66",
     "name": "댕크(Dank)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 사평대로57길 96(1층 반포동)",
@@ -2620,7 +2620,7 @@
   {
     "id": "petkorea-mapo-69",
     "name": "도주",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 성미산로 190-3(1층 연남동)",
@@ -2773,7 +2773,7 @@
   {
     "id": "petkorea-seongdong-78",
     "name": "라파리나 금호",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongdong",
     "guName": "성동구",
     "address": "서울특별시 성동구 금호로 67(지하1층 B02호 금호동2가)",
@@ -2824,7 +2824,7 @@
   {
     "id": "petkorea-seocho-81",
     "name": "레발콩",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 방배천로 92(101호,102호,104호 방배동, 세양아르비채)",
@@ -2841,7 +2841,7 @@
   {
     "id": "petkorea-mapo-82",
     "name": "레오띠(LEOTTI)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 망원로2길 96(류버들 1층 101호 망원동)",
@@ -2858,7 +2858,7 @@
   {
     "id": "petkorea-dongdaemun-83",
     "name": "레이업(LAYUP)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 전농로 153(2층 전농동)",
@@ -2909,7 +2909,7 @@
   {
     "id": "petkorea-seodaemun-86",
     "name": "레커레커(LECKER LECKER)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seodaemun",
     "guName": "서대문구",
     "address": "서울특별시 서대문구 불광천길 278(1층 북가좌동)",
@@ -2960,7 +2960,7 @@
   {
     "id": "petkorea-gangdong-89",
     "name": "로우앵글클럽(LOW ANGLE CLUB)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangdong",
     "guName": "강동구",
     "address": "서울특별시 강동구 천중로 32(201호 천호동)",
@@ -2994,7 +2994,7 @@
   {
     "id": "petkorea-geumcheon-91",
     "name": "룽디저트",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "geumcheon",
     "guName": "금천구",
     "address": "서울특별시 금천구 가산로5길 14(해찬행복드림 1층 101호 가산동)",
@@ -3045,7 +3045,7 @@
   {
     "id": "petkorea-yeongdeungpo-94",
     "name": "리브레리(Librairie)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yeongdeungpo",
     "guName": "영등포구",
     "address": "서울특별시 영등포구 양산로25길 3(1층 당산동3가)",
@@ -3062,7 +3062,7 @@
   {
     "id": "petkorea-seocho-95",
     "name": "리요리요",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 방배천로18길 11(B동 104호 방배동, 방배 롯데캐슬 아르떼상가)",
@@ -3113,7 +3113,7 @@
   {
     "id": "petkorea-seocho-98",
     "name": "리프레셔스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 청두곶6길 8(1층 방배동)",
@@ -3130,7 +3130,7 @@
   {
     "id": "petkorea-seocho-99",
     "name": "리플렉트",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 남부순환로347길 53(104호 서초동)",
@@ -3147,7 +3147,7 @@
   {
     "id": "petkorea-seongdong-100",
     "name": "림보",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongdong",
     "guName": "성동구",
     "address": "서울특별시 성동구 성덕정19길 17-1(1층 성수동2가)",
@@ -3164,7 +3164,7 @@
   {
     "id": "petkorea-jongno-101",
     "name": "마그넷 케이크룸(MAGNETTT-cakeroom)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 사직로12길 1-2(1층 내자동)",
@@ -3198,7 +3198,7 @@
   {
     "id": "petkorea-yongsan-103",
     "name": "마더오프라인(MOTHER OFFLINE)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 이태원로55나길 6(1층 한남동)",
@@ -3232,7 +3232,7 @@
   {
     "id": "petkorea-jungnang-105",
     "name": "마이닥스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jungnang",
     "guName": "중랑구",
     "address": "서울특별시 중랑구 면목로 306(2층 면목동)",
@@ -3266,7 +3266,7 @@
   {
     "id": "petkorea-nowon-107",
     "name": "망고정(월계점)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "nowon",
     "guName": "노원구",
     "address": "서울특별시 노원구 월계로55길 64(지상2층 203호 월계동)",
@@ -3283,7 +3283,7 @@
   {
     "id": "petkorea-mapo-108",
     "name": "망깍지",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 망원로 67(2층 망원동)",
@@ -3351,7 +3351,7 @@
   {
     "id": "petkorea-jungnang-112",
     "name": "멍뭉다방",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jungnang",
     "guName": "중랑구",
     "address": "서울특별시 중랑구 용마산로 299(4층 면목동)",
@@ -3368,7 +3368,7 @@
   {
     "id": "petkorea-gwanak-113",
     "name": "멍지트",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 신림로64길 23(9층 신림동)",
@@ -3402,7 +3402,7 @@
   {
     "id": "petkorea-seocho-115",
     "name": "메이 베이크",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 서초대로25길 90(지하1층 방배동)",
@@ -3453,7 +3453,7 @@
   {
     "id": "petkorea-yongsan-118",
     "name": "멜리",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 두텁바위로 137(1층 101호 후암동)",
@@ -3521,7 +3521,7 @@
   {
     "id": "petkorea-seongbuk-122",
     "name": "모안",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 보문로25길 10(1층 보문동2가)",
@@ -3572,7 +3572,7 @@
   {
     "id": "petkorea-seocho-125",
     "name": "몬탁 방배점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 서초대로25길 54(1층 방배동)",
@@ -3674,7 +3674,7 @@
   {
     "id": "petkorea-jongno-131",
     "name": "뭉치",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 지봉로 78(미래빌딩 3층 숭인동)",
@@ -3691,7 +3691,7 @@
   {
     "id": "petkorea-dongdaemun-132",
     "name": "미뉴엣",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 망우로 19(1층 휘경동)",
@@ -3708,7 +3708,7 @@
   {
     "id": "petkorea-gwanak-133",
     "name": "미니멈올데이",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 남부순환로153길 56(1층 신림동)",
@@ -3844,7 +3844,7 @@
   {
     "id": "petkorea-seodaemun-141",
     "name": "밍기적",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seodaemun",
     "guName": "서대문구",
     "address": "서울특별시 서대문구 불광천길 274(1층 북가좌동)",
@@ -3861,7 +3861,7 @@
   {
     "id": "petkorea-songpa-142",
     "name": "바르세울로나",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 위례성대로12길 5(아이베 1층 방이동)",
@@ -3895,7 +3895,7 @@
   {
     "id": "petkorea-nowon-144",
     "name": "바크바",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "nowon",
     "guName": "노원구",
     "address": "서울특별시 노원구 노원로26길 69(오성빌딩 2층 상계동)",
@@ -3912,7 +3912,7 @@
   {
     "id": "petkorea-dongdaemun-145",
     "name": "버우드 Burwood",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 이문로 120(D104호 이문동)",
@@ -3929,7 +3929,7 @@
   {
     "id": "petkorea-gwangjin-146",
     "name": "버터럼부티크",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwangjin",
     "guName": "광진구",
     "address": "서울특별시 광진구 아차산로76길 28(1,2층 광장동)",
@@ -3946,7 +3946,7 @@
   {
     "id": "petkorea-jongno-147",
     "name": "베란다",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 사직로10길 9-4(1층 내자동)",
@@ -3963,7 +3963,7 @@
   {
     "id": "petkorea-gangnam-148",
     "name": "베리하운드(BERRY HOUND)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 언주로75길 20(1층 역삼동)",
@@ -4031,7 +4031,7 @@
   {
     "id": "petkorea-seodaemun-152",
     "name": "봉맨션",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seodaemun",
     "guName": "서대문구",
     "address": "서울특별시 서대문구 가좌로 118(2층 201호 홍은동)",
@@ -4065,7 +4065,7 @@
   {
     "id": "petkorea-gangseo-154",
     "name": "브라운씨",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 강서로47가길 33(덕산빌딩 1층 104호 내발산동)",
@@ -4116,7 +4116,7 @@
   {
     "id": "petkorea-jongno-157",
     "name": "비비드(ViVi:D)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 비봉2길 10(103호 구기동)",
@@ -4184,7 +4184,7 @@
   {
     "id": "petkorea-mapo-161",
     "name": "빠루(BBARU)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 월드컵로32길 39(1층 좌측호 성산동)",
@@ -4201,7 +4201,7 @@
   {
     "id": "petkorea-songpa-162",
     "name": "빵쌤 송파점(BbangSsaem)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 삼학사로 35(1층 삼전동)",
@@ -4218,7 +4218,7 @@
   {
     "id": "petkorea-seocho-163",
     "name": "사랑은 초록",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 강남대로2길 70(GP빌딩 1층 양재동)",
@@ -4252,7 +4252,7 @@
   {
     "id": "petkorea-jung-165",
     "name": "사루",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jung",
     "guName": "중구",
     "address": "서울특별시 중구 동호로12길 53(1층 신당동)",
@@ -4371,7 +4371,7 @@
   {
     "id": "petkorea-jongno-172",
     "name": "서촌다과방",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 필운대로 6(1층 필운동)",
@@ -4388,7 +4388,7 @@
   {
     "id": "petkorea-yeongdeungpo-173",
     "name": "선유슬로우(sunu.slow)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yeongdeungpo",
     "guName": "영등포구",
     "address": "서울특별시 영등포구 선유로53길 34-8(양평동4가)",
@@ -4439,7 +4439,7 @@
   {
     "id": "petkorea-mapo-176",
     "name": "소밧(SOVAT)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 독막로22길 28(1층 창전동)",
@@ -4456,7 +4456,7 @@
   {
     "id": "petkorea-yongsan-177",
     "name": "소서(SOSEO)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 서빙고로 17(1층 67호 한강로3가)",
@@ -4575,7 +4575,7 @@
   {
     "id": "petkorea-dobong-184",
     "name": "숲담",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dobong",
     "guName": "도봉구",
     "address": "서울특별시 도봉구 도당로6길 30-6(1층 방학동, 담터캐슬)",
@@ -4643,7 +4643,7 @@
   {
     "id": "petkorea-jongno-188",
     "name": "스태픽스(staff picks)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 사직로9길 22(1층 102호 필운동)",
@@ -4677,7 +4677,7 @@
   {
     "id": "petkorea-dongdaemun-190",
     "name": "스테이(sta2)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 고산자로 393-6(1층 용두동)",
@@ -4694,7 +4694,7 @@
   {
     "id": "petkorea-songpa-191",
     "name": "스톤앤워터(STONE+WATER)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 가락로 283(1층 방이동)",
@@ -4762,7 +4762,7 @@
   {
     "id": "petkorea-yongsan-196",
     "name": "시아 아틀리에(sia atelier)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 서빙고로 35(102동 1층 114호 한강로3가, 용산시티파크1단지)",
@@ -4796,7 +4796,7 @@
   {
     "id": "petkorea-yongsan-198",
     "name": "시엠프레꼬모도밍고",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 후암로34길 11(지하1층 B02호 후암동)",
@@ -4847,7 +4847,7 @@
   {
     "id": "petkorea-seongbuk-201",
     "name": "싱글벙글",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 종암로14길 12-16(1층 101호 종암동)",
@@ -4864,7 +4864,7 @@
   {
     "id": "petkorea-yongsan-202",
     "name": "써머레인",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 이태원로55가길 49(1층 한남동)",
@@ -4966,7 +4966,7 @@
   {
     "id": "petkorea-nowon-208",
     "name": "아워 베스트 시즌(our best season)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "nowon",
     "guName": "노원구",
     "address": "서울특별시 노원구 노원로38길 76(상가동 302호 상계동, 포레나노원)",
@@ -4983,7 +4983,7 @@
   {
     "id": "petkorea-seongbuk-209",
     "name": "아일(isle)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 삼선교로11길 34(지상1층 삼선동4가)",
@@ -5000,7 +5000,7 @@
   {
     "id": "petkorea-gangbuk-210",
     "name": "아지브런치",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangbuk",
     "guName": "강북구",
     "address": "서울특별시 강북구 4.19로17길 14-1(수유동)",
@@ -5017,7 +5017,7 @@
   {
     "id": "petkorea-songpa-211",
     "name": "아키비스트 송파",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 오금로16길 4(지하1,지상1,2층 송파동)",
@@ -5034,7 +5034,7 @@
   {
     "id": "petkorea-jongno-212",
     "name": "아키비스트(Archivist)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 효자로13길 52(1층 효자동)",
@@ -5051,7 +5051,7 @@
   {
     "id": "petkorea-gangnam-213",
     "name": "알로하터틀",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 양재천로 169(지상1층, 지하1층 도곡동)",
@@ -5085,7 +5085,7 @@
   {
     "id": "petkorea-mapo-215",
     "name": "앤드에이",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 토정로11길 54(1층 상수동)",
@@ -5102,7 +5102,7 @@
   {
     "id": "petkorea-seongbuk-216",
     "name": "야미스터피",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 창경궁로35길 83(성북동1가)",
@@ -5119,7 +5119,7 @@
   {
     "id": "petkorea-guro-217",
     "name": "얌얌플레이트",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "guro",
     "guName": "구로구",
     "address": "서울특별시 구로구 개봉로12길 9-40(1층 개봉동)",
@@ -5153,7 +5153,7 @@
   {
     "id": "petkorea-seongbuk-219",
     "name": "어라운드 히어",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 지봉로 181(B1층 보문동2가)",
@@ -5170,7 +5170,7 @@
   {
     "id": "petkorea-gangseo-220",
     "name": "어로드사이드",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 마곡중앙5로 6(마곡나루역보타닉푸르지오시티 2층 226일부호 마곡동)",
@@ -5187,7 +5187,7 @@
   {
     "id": "petkorea-gangseo-221",
     "name": "어보블(abovl)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 양천로24길 66(1층 방화동)",
@@ -5204,7 +5204,7 @@
   {
     "id": "petkorea-songpa-222",
     "name": "언더바닐라",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 풍성로24길 18(1층 풍납동)",
@@ -5221,7 +5221,7 @@
   {
     "id": "petkorea-gangdong-223",
     "name": "언톨드(UNTOLD)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangdong",
     "guName": "강동구",
     "address": "서울특별시 강동구 올림픽로60길 14(1층 101호 성내동)",
@@ -5238,7 +5238,7 @@
   {
     "id": "petkorea-gwanak-224",
     "name": "에놀라 톤",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 신사로 114(1층 신림동)",
@@ -5306,7 +5306,7 @@
   {
     "id": "petkorea-gangdong-228",
     "name": "에이치앰퍼샌드",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangdong",
     "guName": "강동구",
     "address": "서울특별시 강동구 고덕로83길 156(라움 1층 고덕동)",
@@ -5340,7 +5340,7 @@
   {
     "id": "petkorea-gangnam-230",
     "name": "엔바이콘",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 논현로149길 66(지하1,2층 논현동)",
@@ -5357,7 +5357,7 @@
   {
     "id": "petkorea-seongbuk-231",
     "name": "엘마드레",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 성북로8길 14(1층 성북동)",
@@ -5374,7 +5374,7 @@
   {
     "id": "petkorea-gwangjin-232",
     "name": "여름집",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwangjin",
     "guName": "광진구",
     "address": "서울특별시 광진구 뚝섬로51길 57(우진빌딩 1층 자양동)",
@@ -5459,7 +5459,7 @@
   {
     "id": "petkorea-nowon-237",
     "name": "오'블루",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "nowon",
     "guName": "노원구",
     "address": "서울특별시 노원구 초안산로2길 110(창조교회 1층 좌측1,2호 월계동)",
@@ -5680,7 +5680,7 @@
   {
     "id": "petkorea-mapo-250",
     "name": "오엠잼(OMJAM)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 성암로13길 66(1층 상암동)",
@@ -5697,7 +5697,7 @@
   {
     "id": "petkorea-eunpyeong-251",
     "name": "오터스(otters)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "eunpyeong",
     "guName": "은평구",
     "address": "서울특별시 은평구 연서로 33(역촌동, 1층)",
@@ -5799,7 +5799,7 @@
   {
     "id": "petkorea-jongno-257",
     "name": "원써드",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 필운대로 43(태평타운 102호 누하동)",
@@ -5935,7 +5935,7 @@
   {
     "id": "petkorea-songpa-265",
     "name": "이이오(eeo)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 백제고분로32길 15(1층 102호 삼전동)",
@@ -5952,7 +5952,7 @@
   {
     "id": "petkorea-gwanak-266",
     "name": "이인",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 봉천로 465(3층 봉천동)",
@@ -5986,7 +5986,7 @@
   {
     "id": "petkorea-jungnang-268",
     "name": "이포크",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jungnang",
     "guName": "중랑구",
     "address": "서울특별시 중랑구 면목로51길 23(1층 면목동)",
@@ -6037,7 +6037,7 @@
   {
     "id": "petkorea-mapo-271",
     "name": "일과",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 토정로 241(신수동, 1층일부)",
@@ -6054,7 +6054,7 @@
   {
     "id": "petkorea-jungnang-272",
     "name": "일상적",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jungnang",
     "guName": "중랑구",
     "address": "서울특별시 중랑구 사가정로49길 34(1층 면목동)",
@@ -6088,7 +6088,7 @@
   {
     "id": "petkorea-dongjak-274",
     "name": "잔디 속에 있다고 상상을 해",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongjak",
     "guName": "동작구",
     "address": "서울특별시 동작구 상도로 265-30(2층 상도1동)",
@@ -6122,7 +6122,7 @@
   {
     "id": "petkorea-gangseo-276",
     "name": "조각집",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 방화대로33길 13(1층 좌측호 방화동)",
@@ -6139,7 +6139,7 @@
   {
     "id": "petkorea-seocho-277",
     "name": "조효상점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 강남대로8길 39-15(1층 양재동)",
@@ -6156,7 +6156,7 @@
   {
     "id": "petkorea-jungnang-278",
     "name": "진스바바(JINS_Barba)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jungnang",
     "guName": "중랑구",
     "address": "서울특별시 중랑구 중랑천로 64(1층 면목동)",
@@ -6207,7 +6207,7 @@
   {
     "id": "petkorea-gangnam-281",
     "name": "차보이(CHA.BOEE)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 도산대로50길 25(지상1층 논현동)",
@@ -6292,7 +6292,7 @@
   {
     "id": "petkorea-gangbuk-286",
     "name": "칩멍크",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangbuk",
     "guName": "강북구",
     "address": "서울특별시 강북구 삼양로98길 7(1층 수유동)",
@@ -6309,7 +6309,7 @@
   {
     "id": "petkorea-geumcheon-287",
     "name": "칩스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "geumcheon",
     "guName": "금천구",
     "address": "서울특별시 금천구 두산로9길 5(101동 101,102호 독산동)",
@@ -6479,7 +6479,7 @@
   {
     "id": "petkorea-yeongdeungpo-297",
     "name": "칼리프하우스(Calif house) 문래",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yeongdeungpo",
     "guName": "영등포구",
     "address": "서울특별시 영등포구 도림로139길 2-2(1층, 옥상층 문래동2가)",
@@ -6564,7 +6564,7 @@
   {
     "id": "petkorea-seodaemun-302",
     "name": "컴인(COME In)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seodaemun",
     "guName": "서대문구",
     "address": "서울특별시 서대문구 이화여대길 88-19(2층 대현동)",
@@ -6598,7 +6598,7 @@
   {
     "id": "petkorea-mapo-304",
     "name": "코니스(CONIS)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 성미산로15길 16-3(1층 연남동)",
@@ -6615,7 +6615,7 @@
   {
     "id": "petkorea-gangseo-305",
     "name": "코모레비",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 마곡서로 101(동익드미라벨복합빌딩 1층 152호 마곡동)",
@@ -6683,7 +6683,7 @@
   {
     "id": "petkorea-gangnam-309",
     "name": "쿡히앤컵히",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 학동로3길 49(지하1층 논현동)",
@@ -6700,7 +6700,7 @@
   {
     "id": "petkorea-songpa-310",
     "name": "큐큐큐큐(QQQQ)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 오금로20길 4(1층 103호 송파동)",
@@ -6717,7 +6717,7 @@
   {
     "id": "petkorea-gangnam-311",
     "name": "크레스타운 압구정점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangnam",
     "guName": "강남구",
     "address": "서울특별시 강남구 압구정로46길 5-2(원일 지상1층 신사동)",
@@ -6751,7 +6751,7 @@
   {
     "id": "petkorea-gwangjin-313",
     "name": "크림베이글",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwangjin",
     "guName": "광진구",
     "address": "서울특별시 광진구 아차산로76길 34(1층 광장동)",
@@ -6768,7 +6768,7 @@
   {
     "id": "petkorea-songpa-314",
     "name": "크림베이글 잠실점",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "songpa",
     "guName": "송파구",
     "address": "서울특별시 송파구 송파대로 473(1층 101호 석촌동, 양지473)",
@@ -6785,7 +6785,7 @@
   {
     "id": "petkorea-gangseo-315",
     "name": "크림빔(Cream Beam)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 강서로15길 119(1층 화곡동)",
@@ -6819,7 +6819,7 @@
   {
     "id": "petkorea-mapo-317",
     "name": "타프나드",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 만리재로 90(블레스하임 3차 지1층 101호 공덕동)",
@@ -6887,7 +6887,7 @@
   {
     "id": "petkorea-yongsan-321",
     "name": "투 리틀 베이커스(two little bakers)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 서빙고로 17(용산센트럴파크 해링텅스퀘어 1층 141호 한강로3가)",
@@ -6921,7 +6921,7 @@
   {
     "id": "petkorea-gwanak-323",
     "name": "투치치",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 관악로14길 30(1층 봉천동)",
@@ -6972,7 +6972,7 @@
   {
     "id": "petkorea-gwanak-326",
     "name": "트램 서울(Trem Seoul)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 남부순환로226길 23-10(1층 101호 봉천동, 황금빌)",
@@ -6989,7 +6989,7 @@
   {
     "id": "petkorea-gangbuk-327",
     "name": "티틸",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangbuk",
     "guName": "강북구",
     "address": "서울특별시 강북구 노해로 42(2층 수유동)",
@@ -7006,7 +7006,7 @@
   {
     "id": "petkorea-yongsan-328",
     "name": "티핑포인트(Tipping point)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yongsan",
     "guName": "용산구",
     "address": "서울특별시 용산구 이태원로 217(현대안성타워 1층 101호 한남동)",
@@ -7108,7 +7108,7 @@
   {
     "id": "petkorea-yeongdeungpo-334",
     "name": "팜스프링스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "yeongdeungpo",
     "guName": "영등포구",
     "address": "서울특별시 영등포구 도신로60길 22-3(신길동, 1층, 2층)",
@@ -7176,7 +7176,7 @@
   {
     "id": "petkorea-seongbuk-338",
     "name": "펫터니아 하우스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 고려대로1길 69(파운드잇 1층 삼선동5가)",
@@ -7193,7 +7193,7 @@
   {
     "id": "petkorea-gwangjin-339",
     "name": "포르르",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwangjin",
     "guName": "광진구",
     "address": "서울특별시 광진구 능동로 137-1(2층,3층, 옥탑층 화양동)",
@@ -7227,7 +7227,7 @@
   {
     "id": "petkorea-geumcheon-341",
     "name": "푸르토아(pour toi)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "geumcheon",
     "guName": "금천구",
     "address": "서울특별시 금천구 독산로54길 41(지하 1층 독산동)",
@@ -7278,7 +7278,7 @@
   {
     "id": "petkorea-seongbuk-344",
     "name": "프로젝트 파이",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 성북로 82(1층 성북동)",
@@ -7295,7 +7295,7 @@
   {
     "id": "petkorea-gangseo-345",
     "name": "플루이드(FLUID)",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 공항대로65길 82(1층 염창동)",
@@ -7346,7 +7346,7 @@
   {
     "id": "petkorea-mapo-348",
     "name": "피크닉마나올라나",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 성미산로 153-16(1층 연남동)",
@@ -7380,7 +7380,7 @@
   {
     "id": "petkorea-seongbuk-350",
     "name": "픽어툴",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 성북로5길 6(1층 성북동1가)",
@@ -7448,7 +7448,7 @@
   {
     "id": "petkorea-dongdaemun-354",
     "name": "하이어그라운드",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 천호대로91길 57(1층 101호 장안동, 캔자스대저택)",
@@ -7482,7 +7482,7 @@
   {
     "id": "petkorea-mapo-356",
     "name": "하츠헤븐",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 희우정로 128(1층 101호 망원동)",
@@ -7533,7 +7533,7 @@
   {
     "id": "petkorea-seongbuk-359",
     "name": "행복하개 키울고양",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seongbuk",
     "guName": "성북구",
     "address": "서울특별시 성북구 고려대로11길 24(3층 안암동2가)",
@@ -7550,7 +7550,7 @@
   {
     "id": "petkorea-jongno-360",
     "name": "헤리티지 클럽",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "jongno",
     "guName": "종로구",
     "address": "서울특별시 종로구 서순라길 75-2(1층 봉익동)",
@@ -7584,7 +7584,7 @@
   {
     "id": "petkorea-gangseo-362",
     "name": "헤이더그린",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 대장로 58(1층 오쇠동)",
@@ -7601,7 +7601,7 @@
   {
     "id": "petkorea-dongdaemun-363",
     "name": "헤이림",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "dongdaemun",
     "guName": "동대문구",
     "address": "서울특별시 동대문구 고산자로 391(1층 용두동)",
@@ -7771,7 +7771,7 @@
   {
     "id": "petkorea-mapo-373",
     "name": "홍댕",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "mapo",
     "guName": "마포구",
     "address": "서울특별시 마포구 와우산로19길 19(4층 서교동)",
@@ -7788,7 +7788,7 @@
   {
     "id": "petkorea-gangseo-374",
     "name": "후룹로스터스",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 마곡중앙6로 45(리더스퀘어마곡 1층 118호 마곡동)",
@@ -7805,7 +7805,7 @@
   {
     "id": "petkorea-gwanak-375",
     "name": "후후라운지",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gwanak",
     "guName": "관악구",
     "address": "서울특별시 관악구 호암로26가길 8(샘물교회 1층 신림동)",
@@ -7822,7 +7822,7 @@
   {
     "id": "petkorea-gangseo-376",
     "name": "희희잇",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "gangseo",
     "guName": "강서구",
     "address": "서울특별시 강서구 마곡중앙4로 22(파인스퀘어 A동 117호 마곡동)",
@@ -7856,7 +7856,7 @@
   {
     "id": "petkorea-seocho-378",
     "name": "히크 엣 눙크",
-    "category": "restaurant",
+    "category": "cafe",
     "gu": "seocho",
     "guName": "서초구",
     "address": "서울특별시 서초구 반포대로9길 79(1층 서초동)",
