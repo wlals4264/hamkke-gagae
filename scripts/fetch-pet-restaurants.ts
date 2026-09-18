@@ -13,6 +13,7 @@
 import { writeFileSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { Place, PlaceCategory } from "../src/types/place";
+import { looksLikeCafe } from "./lib/classify-cafe";
 
 const ROOT = resolve(__dirname, "..");
 
@@ -72,8 +73,9 @@ const SEOUL_GU_SLUG: Record<string, string> = {
   강동구: "gangdong",
 };
 
-function mapCategory(indutyNm: string): PlaceCategory {
+function mapCategory(indutyNm: string, name: string): PlaceCategory {
   if (indutyNm === "휴게음식점" || indutyNm === "제과점영업") return "cafe";
+  if (looksLikeCafe(name)) return "cafe";
   return "restaurant";
 }
 
@@ -175,7 +177,7 @@ async function main() {
     places.set(id, {
       id,
       name: item.bsshNm,
-      category: mapCategory(item.indutyNm),
+      category: mapCategory(item.indutyNm, item.bsshNm),
       gu: gu.slug,
       guName: gu.name,
       address: item.siteAddr,

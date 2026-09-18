@@ -11,6 +11,7 @@
 import { writeFileSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { Place, PlaceCategory } from "../src/types/place";
+import { looksLikeCafe } from "./lib/classify-cafe";
 
 const ROOT = resolve(__dirname, "..");
 
@@ -71,12 +72,13 @@ const SEOUL_GU: { slug: string; name: string; code: string }[] = [
   { slug: "gangdong", name: "강동구", code: "740" },
 ];
 
-function mapCategory(contenttypeid: string): PlaceCategory | null {
+function mapCategory(contenttypeid: string, name: string): PlaceCategory | null {
   if (contenttypeid === "12") return "park";
   if (contenttypeid === "38") return "mall";
   // contentTypeId=39(음식점)의 cat2는 항상 "A0502"(대분류) 하나뿐이라 카페/일반음식점 구분이
-  // cat2로는 불가능합니다(세부 구분은 cat3 레벨). 구분 없이 전부 일반음식점으로 분류합니다.
-  if (contenttypeid === "39") return "restaurant";
+  // cat2로는 불가능합니다(세부 구분은 cat3 레벨). 이름에 카페/커피 키워드가 있으면 cafe로 보정하고,
+  // 나머지는 일반음식점으로 분류합니다.
+  if (contenttypeid === "39") return looksLikeCafe(name) ? "cafe" : "restaurant";
   return null;
 }
 
@@ -259,7 +261,7 @@ async function main() {
       await sleep(150);
 
       for (const candidate of candidates.slice(0, plan.checkLimit)) {
-        const category = mapCategory(candidate.contenttypeid);
+        const category = mapCategory(candidate.contenttypeid, candidate.title);
         if (!category) continue;
         if (checkedIds.has(candidate.contentid)) continue;
 
