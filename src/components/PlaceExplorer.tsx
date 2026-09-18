@@ -7,6 +7,7 @@ import { CATEGORY_LIST } from "@/lib/places";
 import { haversineDistanceKm } from "@/lib/geo";
 import KakaoMap from "./KakaoMap";
 import PlaceList from "./PlaceList";
+import { buttonClass } from "@/lib/ui/button";
 
 interface PlaceExplorerProps {
   /** 서버에서 이미 구/카테고리 기준으로 필터링해 내려준 장소 목록 */
@@ -134,7 +135,7 @@ export default function PlaceExplorer({ places, activeGu, activeCategory }: Plac
         <button
           type="button"
           onClick={handleFindMe}
-          className="ml-auto rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-ink shadow-sm transition hover:bg-brand-100"
+          className={buttonClass("brand", "md", "ml-auto")}
         >
           {geoStatus === "loading" ? "위치 확인 중..." : "📍 내 주변 보기"}
         </button>

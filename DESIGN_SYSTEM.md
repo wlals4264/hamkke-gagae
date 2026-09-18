@@ -32,9 +32,11 @@
 
 ## Components
 
-- **Primary action:** Ink 배경 + 흰색 텍스트. 피치 배경에는 Ink 텍스트 (흰색 금지).
-- **Secondary action:** 흰색 배경, Ink 10–15% 테두리
-- **Filter chip:** 비활성은 흰색, 활성은 Ink 배경
+- **Button** (`src/lib/ui/button.ts`의 `buttonClass(variant, size, className?)`로 생성): 태그(`<button>`/`<a>`/`<Link>`/`<form>` 내부)는 상황에 맞게 쓰고, className만 이 함수로 통일한다.
+  - Size: `sm`(`px-3 py-1.5 text-xs`, 헤더 보조 행동) · `md`(`px-4 py-2.5 text-sm`, 기본값·대부분의 행동) · `lg`(`px-6 py-3.5 text-sm`, 히어로처럼 화면당 하나뿐인 핵심 행동)
+  - Variant: `primary`(Ink 배경 + 흰색), `secondary`(흰색 배경 + Ink 10–15% 테두리), `brand`(피치 강조, 예: 내 주변 보기), `kakao`(카카오 브랜드 색, 로그인 전용)
+  - 새 버튼을 추가할 때 직접 `px-*/py-*` 값을 쓰지 말고 항상 `buttonClass`를 거친다.
+- **Filter chip:** 비활성은 흰색, 활성은 Ink 배경 (버튼과 달리 선택 상태가 있어 별도 스타일 유지)
 - **Place card:** 흰색 표면, Ink 10% 테두리, hover 시 3px 상승
 - **Policy badge:** 긍정 조건은 Sage, 카테고리는 Brand 계열
 - **Map surface:** 24px 이상 라운드와 얇은 흰색 내부 여백

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PawMark } from "@/components/BrandMark";
 import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/constants";
+import { buttonClass } from "@/lib/ui/button";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
               {BRAND_TAGLINE}. 서울의 카페, 식당, 공원을 동반 조건까지 꼼꼼하게 찾아보세요.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Link href="/seoul" className="rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white shadow-card transition hover:bg-sage-700">
+              <Link href="/seoul" className={buttonClass("primary", "lg")}>
                 장소 탐색 →
               </Link>
             </div>

@@ -1,4 +1,5 @@
 import { getSession } from "@/lib/auth/session";
+import { buttonClass } from "@/lib/ui/button";
 
 export default async function AuthButton() {
   const session = await getSession();
@@ -8,10 +9,7 @@ export default async function AuthButton() {
       <div className="flex items-center gap-2">
         <span className="hidden text-sm font-medium text-muted sm:inline">{session.nickname}님</span>
         <form action="/api/auth/logout" method="post">
-          <button
-            type="submit"
-            className="rounded-full border border-ink/15 bg-white px-3 py-1.5 text-xs font-bold text-ink transition hover:border-ink/35"
-          >
+          <button type="submit" className={buttonClass("secondary", "md")}>
             로그아웃
           </button>
         </form>
@@ -20,10 +18,7 @@ export default async function AuthButton() {
   }
 
   return (
-    <a
-      href="/api/auth/kakao/login"
-      className="rounded-full bg-[#FEE500] px-3 py-1.5 text-xs font-bold text-[#191919] shadow-sm transition hover:brightness-95"
-    >
+    <a href="/api/auth/kakao/login" className={buttonClass("kakao", "md")}>
       카카오로 로그인
     </a>
   );

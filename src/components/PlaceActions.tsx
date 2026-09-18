@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import type { Place } from "@/types/place";
 import Snackbar from "./Snackbar";
+import { buttonClass } from "@/lib/ui/button";
 
 interface PlaceActionsProps {
   place: Place;
@@ -39,7 +40,7 @@ export default function PlaceActions({ place }: PlaceActionsProps) {
           href={kakaoRouteUrl(place)}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-ink px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-sage-700"
+          className={buttonClass("primary", "md")}
         >
           🧭 길찾기
         </a>
@@ -47,15 +48,11 @@ export default function PlaceActions({ place }: PlaceActionsProps) {
           href={kakaoMapUrl(place)}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-bold text-ink transition hover:border-ink/35"
+          className={buttonClass("secondary", "md")}
         >
           🗺️ 카카오맵에서 보기
         </a>
-        <button
-          type="button"
-          onClick={handleShare}
-          className="rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-bold text-ink transition hover:border-ink/35"
-        >
+        <button type="button" onClick={handleShare} className={buttonClass("secondary", "md")}>
           🔗 지도 공유하기
         </button>
       </div>
