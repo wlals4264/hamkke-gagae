@@ -38,13 +38,20 @@ interface KakaoMapProps {
 const SEOUL_CITY_HALL = { lat: 37.5665, lng: 126.978 };
 
 /** 브랜드 토큰(brand-600 / cream) 기반 커스텀 핀 마커. 카카오 기본 파란 마커 대신 사용. */
-const MARKER_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">
-  <path d="M16 0C7.163 0 0 7.163 0 16c0 11.5 16 26 16 26s16-14.5 16-26C32 7.163 24.837 0 16 0z" fill="#885039"/>
-  <circle cx="16" cy="16" r="6.5" fill="#ffeed6"/>
+const MARKER_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 40 48">
+  <defs>
+    <filter id="pin-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.4" flood-color="#3f3828" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <g filter="url(#pin-shadow)">
+    <path d="M20 2C11.163 2 4 9.163 4 18c0 11.5 16 26 16 26s16-14.5 16-26C36 9.163 28.837 2 20 2z" fill="#885039"/>
+    <circle cx="20" cy="18" r="6.5" fill="#ffeed6"/>
+  </g>
 </svg>`;
 const MARKER_IMAGE_SRC = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(MARKER_SVG)}`;
-const MARKER_SIZE = { width: 32, height: 42 };
-const MARKER_OFFSET = { x: 16, y: 42 };
+const MARKER_SIZE = { width: 40, height: 48 };
+const MARKER_OFFSET = { x: 20, y: 44 };
 
 export default function KakaoMap({
   places,
