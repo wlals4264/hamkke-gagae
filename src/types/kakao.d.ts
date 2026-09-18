@@ -15,7 +15,18 @@ declare global {
           container: HTMLElement,
           options: { center: unknown; level?: number },
         ) => KakaoMapInstance;
-        Marker: new (options: { position: unknown; map?: KakaoMapInstance }) => KakaoMarkerInstance;
+        Marker: new (options: {
+          position: unknown;
+          map?: KakaoMapInstance;
+          image?: unknown;
+        }) => KakaoMarkerInstance;
+        MarkerImage: new (
+          src: string,
+          size: unknown,
+          options?: { offset?: unknown },
+        ) => unknown;
+        Size: new (width: number, height: number) => unknown;
+        Point: new (x: number, y: number) => unknown;
         event: {
           addListener: (
             target: KakaoMarkerInstance | KakaoMapInstance,

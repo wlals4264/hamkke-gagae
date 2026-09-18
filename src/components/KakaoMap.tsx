@@ -37,6 +37,15 @@ interface KakaoMapProps {
 
 const SEOUL_CITY_HALL = { lat: 37.5665, lng: 126.978 };
 
+/** 브랜드 토큰(brand-600 / cream) 기반 커스텀 핀 마커. 카카오 기본 파란 마커 대신 사용. */
+const MARKER_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">
+  <path d="M16 0C7.163 0 0 7.163 0 16c0 11.5 16 26 16 26s16-14.5 16-26C32 7.163 24.837 0 16 0z" fill="#885039"/>
+  <circle cx="16" cy="16" r="6.5" fill="#ffeed6"/>
+</svg>`;
+const MARKER_IMAGE_SRC = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(MARKER_SVG)}`;
+const MARKER_SIZE = { width: 32, height: 42 };
+const MARKER_OFFSET = { x: 16, y: 42 };
+
 export default function KakaoMap({
   places,
   center = SEOUL_CITY_HALL,
@@ -88,10 +97,17 @@ export default function KakaoMap({
 
     markersRef.current.forEach((marker) => marker.setMap(null));
 
+    const markerImage = new window.kakao.maps.MarkerImage(
+      MARKER_IMAGE_SRC,
+      new window.kakao.maps.Size(MARKER_SIZE.width, MARKER_SIZE.height),
+      { offset: new window.kakao.maps.Point(MARKER_OFFSET.x, MARKER_OFFSET.y) },
+    );
+
     markersRef.current = places.map((place) => {
       const marker = new window.kakao.maps.Marker({
         position: new window.kakao.maps.LatLng(place.lat, place.lng),
         map: mapRef.current!,
+        image: markerImage,
       }) as KakaoMarkerInstance;
 
       if (onMarkerClick) {

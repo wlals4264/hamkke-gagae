@@ -20,10 +20,7 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link href="/seoul" className="rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white shadow-card transition hover:bg-sage-700">
-                내 주변 장소 찾기 →
-              </Link>
-              <Link href="/seoul" className="rounded-full border border-ink/15 bg-white px-6 py-3.5 text-sm font-bold text-ink transition hover:border-ink/35">
-                서울 지도로 보기
+                장소 탐색 →
               </Link>
             </div>
             <div className="mt-10 flex items-center gap-4 text-xs font-medium text-muted">

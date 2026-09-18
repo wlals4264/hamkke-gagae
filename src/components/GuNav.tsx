@@ -1,105 +1,58 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { GU_LIST } from "@/lib/places";
 
 interface GuNavProps {
-  /** 현재 선택된 구 slug. 없으면 "서울 전체"가 활성 상태로 표시됨 */
   activeGu?: string;
 }
 
-function ChevronIcon({ direction }: { direction: "left" | "right" }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
-      <path
-        d={direction === "left" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"}
-        stroke="currentColor"
-        strokeWidth={2.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+const districts = [...GU_LIST].sort((a, b) => a.name.localeCompare(b.name, "ko"));
 
-function chipClass(active: boolean) {
-  return `whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-semibold transition ${
-    active ? "border-ink bg-ink text-white shadow-sm" : "border-ink/10 bg-white text-muted hover:border-brand-500/50 hover:text-ink"
-  }`;
-}
-
-/**
- * 구 목록이 26개(전체 포함)라 한 화면에 다 안 들어와서 가로 스크롤로 처리하는데,
- * macOS 등 기본 스크롤바가 숨겨지는 환경에서는 스크롤이 되는지 자체를 알아채기 어렵습니다.
- * 그래서 넘칠 때 양쪽에 페이드 + 화살표 버튼을 띄워 "더 있다"는 걸 시각적으로 알려줍니다.
- */
 export default function GuNav({ activeGu }: GuNavProps) {
-  const scrollRef = useRef<HTMLElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const updateScrollState = () => {
-      setCanScrollLeft(el.scrollLeft > 4);
-      setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
-    };
-
-    updateScrollState();
-    el.addEventListener("scroll", updateScrollState);
-    window.addEventListener("resize", updateScrollState);
-    return () => {
-      el.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", updateScrollState);
-    };
-  }, []);
-
-  function scrollByAmount(amount: number) {
-    scrollRef.current?.scrollBy({ left: amount, behavior: "smooth" });
-  }
+  const selectedName = GU_LIST.find((gu) => gu.slug === activeGu)?.name ?? "서울 전체";
 
   return (
-    <div className="relative">
-      <nav ref={scrollRef} className="flex gap-2 overflow-x-auto pb-1" aria-label="구 선택">
-        <Link href="/seoul" className={chipClass(!activeGu)}>
-          서울 전체
-        </Link>
-        {GU_LIST.map((gu) => (
-          <Link key={gu.slug} href={`/seoul/${gu.slug}`} className={chipClass(activeGu === gu.slug)}>
-            {gu.name}
+    <details key={activeGu ?? "all"} className="group rounded-2xl border border-ink/10 bg-white shadow-sm">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl px-5 py-4 [&::-webkit-details-marker]:hidden">
+        <span className="flex min-w-0 items-center gap-3">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sage-100 text-sage-700">
+            <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+              <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" strokeWidth="1.7" />
+              <circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.7" />
+            </svg>
+          </span>
+          <span>
+            <span className="block text-xs font-medium text-muted">탐색 지역</span>
+            <span className="mt-0.5 block text-base font-bold text-ink">{selectedName}</span>
+          </span>
+        </span>
+        <span className="flex shrink-0 items-center gap-2 text-sm font-semibold text-sage-700">
+          <span className="group-open:hidden">지역 변경</span>
+          <span className="hidden group-open:inline">접기</span>
+          <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      </summary>
+      <nav className="border-t border-ink/10 p-4 sm:p-5" aria-label="탐색 지역 선택">
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <Link href="/seoul" aria-current={!activeGu ? "page" : undefined} className={`rounded-xl px-4 py-3 text-sm font-semibold transition ${!activeGu ? "bg-ink text-white" : "bg-cream text-ink hover:bg-sage-100"}`}>
+            서울 전체{!activeGu && <span className="ml-2" aria-hidden="true">✓</span>}
           </Link>
-        ))}
+          <span className="text-xs text-muted">25개 구 · 가나다순</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-5 lg:grid-cols-7">
+          {districts.map((gu) => (
+            <Link
+              key={gu.slug}
+              href={`/seoul/${gu.slug}`}
+              aria-current={activeGu === gu.slug ? "page" : undefined}
+              className={`flex min-h-11 items-center justify-center gap-1 rounded-xl px-2 py-3 text-sm font-medium transition ${activeGu === gu.slug ? "bg-ink text-white" : "bg-cream/50 text-ink hover:bg-sage-100"}`}
+            >
+              {gu.name}{activeGu === gu.slug && <span aria-hidden="true">✓</span>}
+            </Link>
+          ))}
+        </div>
       </nav>
-
-      {canScrollLeft && (
-        <>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-cream to-transparent" />
-          <button
-            type="button"
-            onClick={() => scrollByAmount(-240)}
-            aria-label="구 목록 왼쪽으로 스크롤"
-            className="absolute -left-1 top-1/2 -translate-y-1/2 grid h-8 w-8 place-items-center rounded-full border border-ink/20 bg-white text-ink shadow-md hover:border-ink/40"
-          >
-            <ChevronIcon direction="left" />
-          </button>
-        </>
-      )}
-      {canScrollRight && (
-        <>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-cream to-transparent" />
-          <button
-            type="button"
-            onClick={() => scrollByAmount(240)}
-            aria-label="구 목록 오른쪽으로 스크롤"
-            className="absolute -right-1 top-1/2 -translate-y-1/2 grid h-8 w-8 place-items-center rounded-full border border-ink/20 bg-white text-ink shadow-md hover:border-ink/40"
-          >
-            <ChevronIcon direction="right" />
-          </button>
-        </>
-      )}
-    </div>
+    </details>
   );
 }
