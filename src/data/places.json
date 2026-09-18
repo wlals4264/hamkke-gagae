@@ -1,306 +1,5 @@
 [
   {
-    "id": "mapo-cafe-1",
-    "name": "연남동 마당 반려카페",
-    "category": "cafe",
-    "gu": "mapo",
-    "guName": "마포구",
-    "address": "서울 마포구 연남동 경의선숲길 인근 (샘플 주소)",
-    "lat": 37.5599,
-    "lng": 126.9256,
-    "description": "야외 마당과 실내 공간이 함께 있는 반려동물 동반 카페. 마당은 목줄 없이 자유롭게, 실내는 목줄 착용 시 동반 가능.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "notes": "야외 마당은 목줄 자유, 실내는 목줄 필수"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "mapo-cafe-2",
-    "name": "합정 강변 애견카페",
-    "category": "cafe",
-    "gu": "mapo",
-    "guName": "마포구",
-    "address": "서울 마포구 합정동 한강변 인근 (샘플 주소)",
-    "lat": 37.5495,
-    "lng": 126.9139,
-    "description": "한강이 보이는 통창 자리가 있는 카페. 소형~중형견까지 동반 가능하며 반려동물 전용 방석을 제공.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "sizeLimit": "소형~중형견"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "mapo-restaurant-1",
-    "name": "망원동 마당 펫프렌들리 식당",
-    "category": "restaurant",
-    "gu": "mapo",
-    "guName": "마포구",
-    "address": "서울 마포구 망원동 망원시장 인근 (샘플 주소)",
-    "lat": 37.5563,
-    "lng": 126.9013,
-    "description": "야외 마당 좌석에 한해 반려동물 동반이 가능한 브런치 식당. 실내석은 동반 불가.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true,
-      "notes": "야외 마당 좌석만 동반 가능, 실내 동반 불가"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "mapo-park-1",
-    "name": "경의선숲길 반려동물 산책로",
-    "category": "park",
-    "gu": "mapo",
-    "guName": "마포구",
-    "address": "서울 마포구 연남동 경의선숲길 (샘플 주소)",
-    "lat": 37.5602,
-    "lng": 126.9195,
-    "description": "연남동 구간을 따라 이어지는 산책로로, 반려동물과 함께 걷기 좋은 평지 코스. 일부 구간은 목줄 필수 표지가 있음.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true,
-      "notes": "일부 구간 목줄 필수 안내판 있음"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "mapo-mall-1",
-    "name": "홍대 애견동반 편집숍 거리",
-    "category": "mall",
-    "gu": "mapo",
-    "guName": "마포구",
-    "address": "서울 마포구 서교동 홍대 상권 일대 (샘플 주소)",
-    "lat": 37.5563,
-    "lng": 126.9237,
-    "description": "소형 반려동물은 이동장 없이도 입장 가능한 편집숍이 모여 있는 거리. 매장별로 조건이 조금씩 다름.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "sizeLimit": "매장별 상이 (대부분 소형견)"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "seongdong-cafe-1",
-    "name": "성수동 창고형 반려카페",
-    "category": "cafe",
-    "gu": "seongdong",
-    "guName": "성동구",
-    "address": "서울 성동구 성수동 카페거리 인근 (샘플 주소)",
-    "lat": 37.5445,
-    "lng": 127.0559,
-    "description": "높은 층고의 창고형 공간을 개조한 카페. 넓은 공간에서 목줄 없이 뛰어놀 수 있는 별도 존이 있음.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": false,
-      "notes": "지정된 놀이 존에서만 목줄 해제 가능"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "seongdong-restaurant-1",
-    "name": "성수 테라스 펫다이닝",
-    "category": "restaurant",
-    "gu": "seongdong",
-    "guName": "성동구",
-    "address": "서울 성동구 성수동 서울숲 인근 (샘플 주소)",
-    "lat": 37.5426,
-    "lng": 127.0578,
-    "description": "서울숲 인근의 테라스 좌석에서 반려동물 동반이 가능한 레스토랑. 반려동물 전용 메뉴도 판매.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true
-    },
-    "source": "mock"
-  },
-  {
-    "id": "seongdong-mall-1",
-    "name": "성수동 팝업 반려동반 편집매장",
-    "category": "mall",
-    "gu": "seongdong",
-    "guName": "성동구",
-    "address": "서울 성동구 성수동 상권 일대 (샘플 주소)",
-    "lat": 37.544,
-    "lng": 127.0538,
-    "description": "시즌마다 바뀌는 팝업스토어들이 모인 편집매장. 대부분 매장이 소형견 동반을 허용.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "sizeLimit": "소형견 위주"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "gangnam-cafe-1",
-    "name": "청담 소형견 전용 카페",
-    "category": "cafe",
-    "gu": "gangnam",
-    "guName": "강남구",
-    "address": "서울 강남구 청담동 명품거리 인근 (샘플 주소)",
-    "lat": 37.524,
-    "lng": 127.047,
-    "description": "5kg 이하 소형견만 입장 가능한 프라이빗 카페. 사전 예약을 권장.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "sizeLimit": "5kg 이하 소형견만"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "gangnam-restaurant-1",
-    "name": "강남 루프탑 펫다이닝",
-    "category": "restaurant",
-    "gu": "gangnam",
-    "guName": "강남구",
-    "address": "서울 강남구 역삼동 강남대로 인근 (샘플 주소)",
-    "lat": 37.5172,
-    "lng": 127.0286,
-    "description": "루프탑 좌석에 한해 반려동물 동반이 가능한 다이닝 공간. 예약 시 반려동물 동반 여부를 미리 알려야 함.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true,
-      "notes": "예약 시 반려동물 동반 사전 고지 필요"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "gangnam-park-1",
-    "name": "양재천 반려동물 산책로",
-    "category": "park",
-    "gu": "gangnam",
-    "guName": "강남구",
-    "address": "서울 강남구 대치동 양재천변 (샘플 주소)",
-    "lat": 37.4779,
-    "lng": 127.0405,
-    "description": "긴 하천변 산책로로, 반려동물과 함께 걷기 좋은 코스가 잘 조성되어 있음.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true
-    },
-    "source": "mock"
-  },
-  {
-    "id": "gangnam-mall-1",
-    "name": "코엑스 반려동반 가능 구역",
-    "category": "mall",
-    "gu": "gangnam",
-    "guName": "강남구",
-    "address": "서울 강남구 삼성동 코엑스 인근 (샘플 주소)",
-    "lat": 37.5127,
-    "lng": 127.059,
-    "description": "일부 지정 구역에 한해 이동장 없이도 반려동물과 함께 이용 가능. 안내 데스크에서 사전 확인 필요.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "notes": "지정 구역 한정, 안내 데스크 사전 확인 권장"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "yongsan-cafe-1",
-    "name": "한남동 애견동반 브런치카페",
-    "category": "cafe",
-    "gu": "yongsan",
-    "guName": "용산구",
-    "address": "서울 용산구 한남동 한남대로 인근 (샘플 주소)",
-    "lat": 37.535,
-    "lng": 127.0,
-    "description": "브런치와 커피를 함께 즐길 수 있는 반려동물 동반 카페. 야외 테라스석이 인기.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true
-    },
-    "source": "mock"
-  },
-  {
-    "id": "yongsan-restaurant-1",
-    "name": "이태원 글로벌 펫프렌들리 다이닝",
-    "category": "restaurant",
-    "gu": "yongsan",
-    "guName": "용산구",
-    "address": "서울 용산구 이태원동 이태원로 인근 (샘플 주소)",
-    "lat": 37.5347,
-    "lng": 126.9945,
-    "description": "이국적인 분위기의 레스토랑으로, 실내외 모두 반려동물 동반이 가능한 몇 안 되는 곳.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true
-    },
-    "source": "mock"
-  },
-  {
-    "id": "yongsan-mall-1",
-    "name": "용산 반려동반 쇼핑구역",
-    "category": "mall",
-    "gu": "yongsan",
-    "guName": "용산구",
-    "address": "서울 용산구 한강로 상권 일대 (샘플 주소)",
-    "lat": 37.5298,
-    "lng": 126.9648,
-    "description": "쇼핑몰 내 일부 층에 한해 반려동물 동반 쇼핑이 가능. 이동장 없이 입장 가능한 소형견 기준.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "sizeLimit": "소형견 (이동장 없이 가능)"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "jongno-cafe-1",
-    "name": "익선동 한옥 반려카페",
-    "category": "cafe",
-    "gu": "jongno",
-    "guName": "종로구",
-    "address": "서울 종로구 익선동 한옥마을 인근 (샘플 주소)",
-    "lat": 37.5726,
-    "lng": 126.991,
-    "description": "한옥을 개조한 아늑한 분위기의 카페. 좌식 공간이 많아 소형견 위주로 동반을 권장.",
-    "petPolicy": {
-      "indoor": true,
-      "leashRequired": true,
-      "sizeLimit": "소형견 권장"
-    },
-    "source": "mock"
-  },
-  {
-    "id": "jongno-park-1",
-    "name": "삼청공원 반려동물 산책로",
-    "category": "park",
-    "gu": "jongno",
-    "guName": "종로구",
-    "address": "서울 종로구 삼청동 삼청공원 (샘플 주소)",
-    "lat": 37.5895,
-    "lng": 126.9822,
-    "description": "숲길을 따라 걷는 완만한 산책로. 계절마다 풍경이 달라져 사계절 인기 있는 코스.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true
-    },
-    "source": "mock"
-  },
-  {
-    "id": "jongno-restaurant-1",
-    "name": "북촌 마당 펫프렌들리 식당",
-    "category": "restaurant",
-    "gu": "jongno",
-    "guName": "종로구",
-    "address": "서울 종로구 가회동 북촌한옥마을 인근 (샘플 주소)",
-    "lat": 37.5824,
-    "lng": 126.9835,
-    "description": "한옥 마당에서 식사와 함께 반려동물 동반이 가능한 공간. 주말에는 대기가 있을 수 있음.",
-    "petPolicy": {
-      "indoor": false,
-      "leashRequired": true,
-      "notes": "주말 대기 있을 수 있음"
-    },
-    "source": "mock"
-  },
-  {
     "id": "tourapi-4025838",
     "name": "갤러리71",
     "category": "mall",
@@ -1606,6 +1305,142 @@
       "indoor": true,
       "leashRequired": true,
       "notes": "전구역 동반가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-2638475",
+    "name": "노들섬",
+    "category": "park",
+    "gu": "yongsan",
+    "guName": "용산구",
+    "address": "서울특별시 용산구 양녕로 445 (이촌동)",
+    "lat": 37.5176638138,
+    "lng": 126.9580364655,
+    "description": "노들섬은 한강대교 중간에 위치한 타원형 모양의 땅으로 ‘백로가 놀던 돌’이라는 뜻의 ‘노돌’에서 이름이 유래한 것으로 알려져 있다. 2012년 한강에서 휴식과 만남의 공간으로 사람들을 이어주던 문화 공간으로 복원하기 위한 고민이 시작되었고, 2019년 9월 노들섬은 ‘음악을 매개로 한 복합문화기지’를 모토로, 자연과 쉼, 문화가 있는 공간으로 재탄생하였다.",
+    "petPolicy": {
+      "indoor": true,
+      "leashRequired": true,
+      "notes": "전구역 동반가능 / - 맹견의 경우, 입마개 착용 필수- 배변봉투 지참 및 배변처리 필수 / 목줄 착용 / 전 견종 동반 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-822384",
+    "name": "북서울꿈의숲",
+    "category": "park",
+    "gu": "gangbuk",
+    "guName": "강북구",
+    "address": "서울특별시 강북구 월계로 173 (번동)",
+    "lat": 37.619724251,
+    "lng": 127.0445440464,
+    "description": "서울 강북과 도봉 등 6개 구에 둘러싸여 있는 초대형 공원인 북서울꿈의숲은 과거 드림랜드가 있던 자리 68만여㎡에 조성된 녹지공원으로 월드컵공원과 올림픽공원에 이어 서울에서 3번째로 큰 공원이다. 숲이 울창해 아름다운 풍광을 자랑하는 벽오산, 오패산으로 둘러싸여 있는 북서울꿈의숲은 벚꽃길과 단풍숲 등의 생태적 조경 공간, 대형연못인 월영지와 월광폭포 등의 ",
+    "petPolicy": {
+      "indoor": false,
+      "leashRequired": true,
+      "notes": "일부구역 동반가능 / - 잔디광장 반려견 출입불가\n- 청운답원은 동반 불가 \n- 맹견 및 대형견의 경우, 입마개 착용 필수\n- 배변봉투 지참 및 배변처리 필수 / 입마개 착용,목줄 착용 / 전 견종 동반 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-2733975",
+    "name": "불암산나비정원",
+    "category": "park",
+    "gu": "nowon",
+    "guName": "노원구",
+    "address": "서울특별시 노원구 한글비석로12길 51-27 (중계동)",
+    "lat": 37.65548008383037,
+    "lng": 127.08063229488481,
+    "description": "노원구 불암산 힐링타운 사업지 중 한 곳으로 365일 살아있는 나비를 볼 수 있는 정원이다. 나비 정원 건물 1층에는 사육배양실, 채란실, 나비 온실 등이 위치해 있고, 2층은 곤충학습관으로 이루어져 있다. 곤충학습관에서는 환경부 지정 멸종 위기종 2급 곤충인 물장군, 두점박이사슴벌레 등 각종 곤충 표본과 곤충 관련 자료들을 볼 수 있다. 단체 관람 시 예",
+    "petPolicy": {
+      "indoor": false,
+      "leashRequired": true,
+      "notes": "일부구역 동반가능 / - 실내 애견 동반 불가- 맹견의 경우, 입마개 착용 필수- 배변봉투 지참 및 배변처리 필수 / 목줄 착용 / 전 견종 동반 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-3450526",
+    "name": "카페우리",
+    "category": "restaurant",
+    "gu": "eunpyeong",
+    "guName": "은평구",
+    "address": "서울특별시 은평구 녹번로1길 13 (녹번동) 1층",
+    "lat": 37.6047933126,
+    "lng": 126.9266024479,
+    "description": "카페 우리는 단순한 카페를 넘어, 은평구립 우리장애인복지관 내에 위치한 특별한 공간이다. 장애인들의 자립을 돕고 사회 참여를 확대하기 위해 마련된 곳으로, 따뜻한 커피 한 잔과 함께 의미 있는 시간을 보낼 수 있다. 카페에서 일하는 바리스타들은 대부분 장애인들로, 직접 커피를 만들고 손님을 응대한다는 특별함이 있다. 카페 우리는 장애인의 사회 참여 확대를 ",
+    "petPolicy": {
+      "indoor": false,
+      "leashRequired": true,
+      "notes": "일부구역 동반가능 / 보조견 동반 입장 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-2402981",
+    "name": "대림동 차이나타운",
+    "category": "park",
+    "gu": "yeongdeungpo",
+    "guName": "영등포구",
+    "address": "서울특별시 영등포구 대림동 1050-43",
+    "lat": 37.4924530714,
+    "lng": 126.8975138236,
+    "description": "대림동 차이나타운은 2000년대 초반 재중동포들이 대림역을 중심으로 정착하며 형성된 밀집 주거지형 차이나타운이다. 전통적인 개항장 중심의 인천이나 부산 차이나타운과는 다르게, 일상생활과 밀접하게 연결된 독특한 형태를 띠고 있다. 대림중앙시장 내 상점 중 약 40%는 재중동포가 운영하고 있으며, 인근에는 이들을 위한 은행, 숙박업소, 식당 등 편의시설이 밀집",
+    "petPolicy": {
+      "indoor": false,
+      "leashRequired": true,
+      "notes": "일부구역 동반가능 / - 매장별 정책이 상이하므로 개별 문의 필요\n- 맹견의 경우, 입마개 착용 필수\n- 배변봉투 지참 및 배변처리 필수 / 목줄 착용 / 전 견종 동반 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-300076",
+    "name": "대성사(서울)",
+    "category": "park",
+    "gu": "seocho",
+    "guName": "서초구",
+    "address": "서울특별시 서초구 남부순환로328길 49 (서초동)",
+    "lat": 37.4763181306,
+    "lng": 127.0134731649,
+    "description": "기록상 마라난타가 백제로 오는 동안 풍토병으로 고생을 하였는데, 우면산 물을 마시고 완쾌하였다고 한다. 이에 우면산에 대성초당을 짓게 되는데 이것이 바로 대성사의 전신이라 전해진다. 또한 3.1독립운동 민족대표 33명 중 한분이신 백용성 스님께서 주석하시며 불교 대표로 참가하시어 대승적 독립운동을 전개하셨다. 현재 대성사에는 백용성 스님이 조성하신 목불좌상",
+    "petPolicy": {
+      "indoor": false,
+      "leashRequired": true,
+      "notes": "일부구역 동반가능 / - 법당 등 실내 시설은 동반 불가\n- 맹견의 경우, 입마개 착용 필수\n- 배변봉투 지참 및 배변처리 필수 / 목줄 착용 / 전 견종 동반 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-753981",
+    "name": "몽마르뜨공원",
+    "category": "park",
+    "gu": "seocho",
+    "guName": "서초구",
+    "address": "서울특별시 서초구 반포대로 201 (반포동)",
+    "lat": 37.4976821568,
+    "lng": 127.0045483736,
+    "description": "몽마르뜨공원은 서래마을 위쪽에 위치한 공원이다. 공원 인근에는 서래마을이 위치하고 있는데, 이곳에는 프랑스인들이 많이 거주하고 있어  공원의 이름을 몽마르뜨공원으로 명명하게 되었다. \n몽마르뜨공원은 명칭만큼이나 예술과 낭만이 가득한 공원이다. 비록 규모는 크지 않지만, 공원에는 프랑스 시인들이 남긴 시와 조형 예술작품들이 가득하다. 빈센트 반고흐, 폴 고갱",
+    "petPolicy": {
+      "indoor": true,
+      "leashRequired": true,
+      "notes": "전구역 동반가능 / - 맹견의 경우, 입마개 착용 필수\n- 배변봉투 지참 및 배변처리 필수 / 목줄 착용 / 전 견종 동반 가능"
+    },
+    "source": "tourapi"
+  },
+  {
+    "id": "tourapi-2003909",
+    "name": "롯데월드타워&롯데월드몰",
+    "category": "park",
+    "gu": "songpa",
+    "guName": "송파구",
+    "address": "서울특별시 송파구 올림픽로 300 (신천동)",
+    "lat": 37.5141653654,
+    "lng": 127.1040749597,
+    "description": "한국적 곡선의 미를 지닌 한국 전통의 도자기와 붓의 형상을 모티브로 설계된 롯데월드타워는 총 129층, 555m 높이로 세계 6위의 초고층 빌딩이다. 대지면적은 축구장의 12.2배, 전체 총면적은 축구장의 110배에 달하는 거대한 수직도시이다. 2016년 12월 마침내 준공되었으며, 특급 호텔 시그니엘 서울과, 화려한 서울의 야경을 볼 수 있는 전망대인 서",
+    "petPolicy": {
+      "indoor": false,
+      "leashRequired": true,
+      "notes": "일부구역 동반가능 / - 식당, 카페, 일부매장 동반 불가(입장 전 사전 문의 필요)\n- 예방 접종이 완료된 반려동물에 한해 동반 가능\n- 반려동물을 바닥에 내려놓으면 안됨\n- 배변봉투 지참 및 수거 필수 / 반려동물 유모차 탑승,이동장(켄넬)사용 / 맹견 및 대형견 제외 동반 가능"
     },
     "source": "tourapi"
   }
