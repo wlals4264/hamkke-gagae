@@ -20,20 +20,8 @@ export default function PlaceActions({ place }: PlaceActionsProps) {
   const [copied, setCopied] = useState(false);
 
   async function handleShare() {
-    const url = kakaoMapUrl(place);
-    const shareData = { title: place.name, text: `${place.name} · ${place.address}`, url };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-      } catch {
-        // 사용자가 공유 시트를 취소한 경우 등 - 별도 처리 없이 무시
-      }
-      return;
-    }
-
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(kakaoMapUrl(place));
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -64,7 +52,7 @@ export default function PlaceActions({ place }: PlaceActionsProps) {
         onClick={handleShare}
         className="rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-bold text-ink transition hover:border-ink/35"
       >
-        {copied ? "✓ 링크 복사됨" : "🔗 카카오맵 링크 공유"}
+        {copied ? "✓ 링크 복사됨" : "🔗 카카오맵 링크 복사"}
       </button>
     </div>
   );

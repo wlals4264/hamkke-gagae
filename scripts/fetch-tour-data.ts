@@ -12,6 +12,7 @@ import { writeFileSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { Place, PlaceCategory } from "../src/types/place";
 import { looksLikeCafe } from "./lib/classify-cafe";
+import { truncateDescription } from "./lib/truncate-description";
 
 const ROOT = resolve(__dirname, "..");
 
@@ -297,7 +298,7 @@ async function main() {
           address: [detail.addr1, detail.addr2].filter(Boolean).join(" "),
           lat,
           lng,
-          description: (detail.overview || detail.title).slice(0, 200),
+          description: truncateDescription(detail.overview || detail.title),
           petPolicy: {
             indoor: /실내|전구역/.test(pet.acmpyTypeCd ?? ""),
             leashRequired: true,
