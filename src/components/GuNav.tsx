@@ -24,12 +24,14 @@ export default function GuNav({ activeGu }: GuNavProps) {
       return;
     }
 
+    // 감지에 "성공"했을 때만 세션당 1회로 제한합니다. 여기서 미리 플래그를 찍으면
+    // 같은 탭에서 /seoul을 다시 열었을 때(뒤로가기, 재방문 등) 감지 자체를 건너뛰게 되어
+    // 매번 "서울 전체"만 보이는 문제가 있었습니다.
     const sessionKey = "kkori-ttara-location-detected";
     if (window.sessionStorage.getItem(sessionKey)) {
       setIsDetecting(false);
       return;
     }
-    window.sessionStorage.setItem(sessionKey, "true");
 
     if (!("geolocation" in navigator)) {
       setIsDetecting(false);
@@ -52,7 +54,10 @@ export default function GuNav({ activeGu }: GuNavProps) {
                     GU_LIST.some((gu) => gu.name === region.region_2depth_name),
                 );
                 const gu = GU_LIST.find((item) => item.name === district?.region_2depth_name);
-                if (gu) router.replace(`/seoul/${gu.slug}`);
+                if (gu) {
+                  window.sessionStorage.setItem(sessionKey, "true");
+                  router.replace(`/seoul/${gu.slug}`);
+                }
               },
             );
           })
