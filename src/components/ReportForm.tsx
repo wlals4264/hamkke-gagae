@@ -74,6 +74,10 @@ export default function ReportForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!selected) {
+      setError("장소를 먼저 검색해서 선택해주세요.");
+      return;
+    }
     setSubmitting(true);
     setError(null);
 
@@ -85,8 +89,8 @@ export default function ReportForm() {
           name,
           category,
           address,
-          lat: selected?.address === address ? selected.lat : undefined,
-          lng: selected?.address === address ? selected.lng : undefined,
+          lat: selected.lat,
+          lng: selected.lng,
           description,
           petPolicy: { indoor, leashRequired, sizeLimit, notes },
         }),
@@ -191,11 +195,14 @@ export default function ReportForm() {
           <label className="text-sm font-bold text-ink">주소</label>
           <input
             value={address}
-            onChange={(e) => setAddress(e.target.value)}
+            readOnly
             required
-            placeholder="위에서 장소를 검색해 선택하거나, 직접 입력해주세요."
-            className={`mt-1.5 ${inputClass}`}
+            placeholder="위에서 장소를 검색해 선택해주세요."
+            className={`mt-1.5 ${inputClass} cursor-not-allowed bg-cream/70 text-muted`}
           />
+          <p className="mt-1 text-xs text-muted">
+            지도 마커 위치와 정확히 맞아야 해서, 주소는 검색 결과에서만 가져와요. 직접 수정할 수 없어요.
+          </p>
         </div>
 
         <div>
@@ -243,8 +250,12 @@ export default function ReportForm() {
 
         {error && <p className="text-sm text-red-700">{error}</p>}
 
-        <button type="submit" disabled={submitting} className={buttonClass("primary", "md", "self-end disabled:opacity-60")}>
-          {submitting ? "제출 중..." : "제보하기"}
+        <button
+          type="submit"
+          disabled={submitting || !selected}
+          className={buttonClass("primary", "md", "self-end disabled:opacity-60")}
+        >
+          {submitting ? "제출 중..." : !selected ? "장소를 먼저 검색해주세요" : "제보하기"}
         </button>
       </form>
     </div>
