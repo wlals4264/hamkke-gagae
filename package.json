@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fetch:tour-data": "tsx scripts/fetch-tour-data.ts"
+    "fetch:tour-data": "tsx scripts/fetch-tour-data.ts",
+    "fetch:pet-restaurants": "tsx scripts/fetch-pet-restaurants.ts"
   },
   "dependencies": {
     "next": "^15.1.0",
