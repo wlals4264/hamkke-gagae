@@ -4,14 +4,15 @@ import { notFound } from "next/navigation";
 import KakaoMap from "@/components/KakaoMap";
 import PlaceActions from "@/components/PlaceActions";
 import CopyButton from "@/components/CopyButton";
-import { CATEGORY_LIST, getAllPlaces, getPlaceById, getNearbyPlaces } from "@/lib/places";
+import ReviewSection from "@/components/ReviewSection";
+import { CATEGORY_LIST, getPlaceById, getNearbyPlaces } from "@/lib/places";
+
+// 후기가 실시간으로 반영돼야 해서(작성 후 router.refresh()로 바로 보임) 이 페이지는
+// 정적 생성 대신 매 요청마다 렌더링합니다.
+export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ id: string }>;
-}
-
-export function generateStaticParams() {
-  return getAllPlaces().map((place) => ({ id: place.id }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -147,6 +148,8 @@ export default async function PlaceDetailPage({ params }: PageProps) {
           ))}
         </div>
       </section>
+
+      <ReviewSection placeId={place.id} />
 
       {nearby.length > 0 && (
         <section className="rounded-3xl border border-ink/10 bg-white p-6">
